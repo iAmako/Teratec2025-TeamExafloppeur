@@ -12,7 +12,7 @@ This repository contains our work for the Teratec Hackathon 2025. Our project fo
 
 ## Repository Structure
 
-- **`writeup.pdf`**: Detailed project report, available at the root of this repository.
+- **`Team_Exafloppeur_Writeup_Teratec_2025.pdf`**: Detailed project report, available at the root of this repository.
 - **`cpp_files/`**: Source code files for the project.
 - **`exe_files/`**: Compiled executables.
 - **`hostfile/`**: Hostfiles used for `mpirun`.
@@ -34,4 +34,4 @@ mpirun --hostfile hostfile/all_hosts -n 160 exe_files/<filename> <first_paramete
 Replace:
 
 - **`filename`** with the name of the executable.
-- **`first_parameter`** with the desired value for the first parameter. (100 000 is a generally a good middle ground, try lower if unsure)
+- **`first_parameter`** with the desired value for the first parameter. (100 000 is a good middle ground, try lower if unsure)
