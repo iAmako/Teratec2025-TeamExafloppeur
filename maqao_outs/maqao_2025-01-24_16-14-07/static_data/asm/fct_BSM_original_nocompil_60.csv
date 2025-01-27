@@ -1,0 +1,7 @@
+address;source_location;insn;indent
+0x402ee4;:0;SUB	SP, SP, #16;
+0x402ee8;:0;STR	X0, [SP, #8];
+0x402eec;:0;LDR	X0, [SP, #8];
+0x402ef0;:0;LDR	D0, [X0];
+0x402ef4;:0;ADD	SP, SP, #16;
+0x402ef8;:0;RET;

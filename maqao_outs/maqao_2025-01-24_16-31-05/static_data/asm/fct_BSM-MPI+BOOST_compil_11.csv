@@ -1,0 +1,472 @@
+address;source_location;insn;indent
+0x401ba4;:0;MOVZ	X16, #5200;
+0x401ba8;:0;SUB	SP, SP, X16,UXTX;
+0x401bac;:0;ADRP	X0, <420bac>;
+0x401bb0;:0;ADD	X0, X0, #3944;
+0x401bb4;:0;ADD	X0, X0, #24;
+0x401bb8;:0;STP	X29, X30, [SP];
+0x401bbc;:0;ADD	X29, SP, #0;
+0x401bc0;:0;LDARB	W1, [X0];
+0x401bc4;:0;TBNZ	W1, #0, 401bd0 <_Z19gaussian_box_mullerv+0x2c>;
+0x401bc8;:0;BL	401530 <@plt_start@+0x220>;
+0x401bcc;:0;CBNZ	W0, 402154 <_Z19gaussian_box_mullerv+0x5b0>;
+0x401bd0;:0;STP	X19, X20, [X29, #16];
+0x401bd4;:0;STP	X21, X22, [X29, #32];
+0x401bd8;:0;STP	X23, X24, [X29, #48];
+0x401bdc;:0;STP	X25, X26, [X29, #64];
+0x401be0;:0;STP	X27, X28, [X29, #80];
+0x401be4;:0;STP	D8, D9, [X29, #96];
+0x401be8;:0;STP	D10, D11, [X29, #112];
+0x401bec;:0;ADRP	X0, <420bec>;
+0x401bf0;:0;ADD	X19, X0, #3944;
+0x401bf4;:0;ADD	X20, X19, #2536;
+0x401bf8;:0;LDARB	W0, [X20];
+0x401bfc;:0;TBZ	W0, #0, 40210c <_Z19gaussian_box_mullerv+0x568>;
+0x401c00;:0;LDR	S9, [X19, #2544];
+0x401c04;:0;LDR	S10, [X19, #2548];
+0x401c08;:0;ADRP	X0, <420c08>;
+0x401c0c;:0;ADD	X0, X0, #3944;
+0x401c10;:0;ADD	X0, X0, #32;
+0x401c14;:0;ADRP	X27, <402c14>;
+0x401c18;:0;MOVZ	W26, #22144;
+0x401c1c;:0;ADD	X27, X27, #2052;
+0x401c20;:0;LDR	X19, [X0, #2496];
+0x401c24;:0;ORR	X24, XZR, X0;
+0x401c28;:0;ADRP	X21, <402c28>;
+0x401c2c;:0;ADRP	X20, <402c2c>;
+0x401c30;:0;MOVK	W26, #40236;
+0x401c34;:0;HINT	#0;
+0x401c38;:0;HINT	#0;
+0x401c3c;:0;HINT	#0;
+0x401c40;:0;CMP	X19, #624;(5) 
+0x401c44;:0;B.EQ	401dd4 <_Z19gaussian_box_mullerv+0x230>;(5) 
+0x401c48;:0;LDR	W0, [X24, X19,LSL #2];  (4) 
+0x401c4c;:0;MOVZ	W25, #61382;  (4) 
+0x401c50;:0;ADD	X23, X21, #3152;  (4) 
+0x401c54;:0;LDR	S2, [X20, #2044];  (4) 
+0x401c58;:0;ADD	X19, X19, #1;  (4) 
+0x401c5c;:0;STR	X19, [X24, #2496];  (4) 
+0x401c60;:0;EOR	W0, W0, W0,LSR #11;  (4) 
+0x401c64;:0;AND	W1, W26, W0,LSL #7;  (4) 
+0x401c68;:0;EOR	W0, W0, W1;  (4) 
+0x401c6c;:0;AND	W1, W25, W0,LSL #15;  (4) 
+0x401c70;:0;EOR	W0, W0, W1;  (4) 
+0x401c74;:0;EOR	W0, W0, W0,LSR #18;  (4) 
+0x401c78;:0;UBFM	W22, W0, #31, #0;  (4) 
+0x401c7c;:0;UBFM	W1, W0, #8, #31;  (4) 
+0x401c80;:0;UBFM	X0, X0, #1, #7;  (4) 
+0x401c84;:0;SUB	W2, W22, #1;  (4) 
+0x401c88;:0;SBFM	X22, X0, #0, #31;  (4) 
+0x401c8c;:0;SCVTF	S11, W1;  (4) 
+0x401c90;:0;UBFM	X28, X22, #61, #60;  (4) 
+0x401c94;:0;STR	W2, [X29, #148];  (4) 
+0x401c98;:0;ADD	X28, X28, #8;  (4) 
+0x401c9c;:0;LDR	D0, [X23, X22,LSL #3];  (4) 
+0x401ca0;:0;FMUL	S11, S11, S2;  (4) 
+0x401ca4;:0;LDR	D1, [X28, X23];  (4) 
+0x401ca8;:0;FCVT	S0, D0;  (4) 
+0x401cac;:0;FMUL	S11, S11, S0;  (4) 
+0x401cb0;:0;FCVT	D0, S11;  (4) 
+0x401cb4;:0;FCMPE	D0, D1;  (4) 
+0x401cb8;:0;B.MI	401d98 <_Z19gaussian_box_mullerv+0x1f4>;  (4) 
+0x401cbc;:0;CBNZ	W0, 401d00 <_Z19gaussian_box_mullerv+0x15c>;  (4) 
+0x401cc0;:0;B	401de4 <_Z19gaussian_box_mullerv+0x240>;  (4) 
+0x401cc4;:0;LDR	W0, [X24, X19,LSL #2];    (6) 
+0x401cc8;:0;FMOV	S1, #1.0000000;    (6) 
+0x401ccc;:0;LDR	S2, [X27];    (6) 
+0x401cd0;:0;ADD	X19, X19, #1;    (6) 
+0x401cd4;:0;STR	X19, [X24, #2496];    (6) 
+0x401cd8;:0;EOR	W0, W0, W0,LSR #11;    (6) 
+0x401cdc;:0;AND	W1, W26, W0,LSL #7;    (6) 
+0x401ce0;:0;EOR	W0, W0, W1;    (6) 
+0x401ce4;:0;AND	W1, W25, W0,LSL #15;    (6) 
+0x401ce8;:0;EOR	W0, W0, W1;    (6) 
+0x401cec;:0;EOR	W0, W0, W0,LSR #18;    (6) 
+0x401cf0;:0;UCVTF	S0, W0;    (6) 
+0x401cf4;:0;FMUL	S0, S0, S2;    (6) 
+0x401cf8;:0;FCMPE	S0, S1;    (6) 
+0x401cfc;:0;B.MI	401d18 <_Z19gaussian_box_mullerv+0x174>;    (6) 
+0x401d00;:0;CMP	X19, #624;    (6) 
+0x401d04;:0;B.NE	401cc4 <_Z19gaussian_box_mullerv+0x120>;    (6) 
+0x401d08;:0;ORR	X0, XZR, X24;    (6) 
+0x401d0c;:0;BL	402640 <_ZN5boost6random23mersenne_twister_engineIjLm32ELm624ELm397ELm31ELj2567483615ELm11ELj4294967295ELm7ELj2636928640ELm15ELj4022730752ELm18ELj1812433253EE5twistEv>;    (6) 
+0x401d10;:0;LDR	X19, [X24, #2496];    (6) 
+0x401d14;:0;B	401cc4 <_Z19gaussian_box_mullerv+0x120>;    (6) 
+0x401d18;:0;ADRP	X0, <402d18>;  (4) 
+0x401d1c;:0;ADD	X0, X0, #2120;  (4) 
+0x401d20;:0;LDR	D3, [X23, X22,LSL #3];  (4) 
+0x401d24;:0;FMOV	D5, #1.0000000;  (4) 
+0x401d28;:0;LDR	D2, [X28, X23];  (4) 
+0x401d2c;:0;LDR	D6, [X0, X22,LSL #3];  (4) 
+0x401d30;:0;LDR	D8, [X28, X0];  (4) 
+0x401d34;:0;FCVT	S1, D3;  (4) 
+0x401d38;:0;FCMPE	D3, D5;  (4) 
+0x401d3c;:0;FSUB	D2, D3, S2;  (4) 
+0x401d40;:0;FCVT	S4, D6;  (4) 
+0x401d44;:0;FSUB	D8, D8, S6;  (4) 
+0x401d48;:0;FSUB	S6, S11, S1;  (4) 
+0x401d4c;:0;FCVT	S2, D2;  (4) 
+0x401d50;:0;FMUL	S1, S4, S1;  (4) 
+0x401d54;:0;FCVT	S8, D8;  (4) 
+0x401d58;:0;FMADD	S2, S0, S2, S6;  (4) 
+0x401d5c;:0;FMADD	S8, S0, S8, S4;  (4) 
+0x401d60;:0;FNMSUB	S0, S1, S6, S4;  (4) 
+0x401d64;:0;FADD	S0, S0, S8;  (4) 
+0x401d68;:0;FCSEL	S1, S2, S0, #10;  (4) 
+0x401d6c;:0;FCSEL	S0, S0, S2, #10;  (4) 
+0x401d70;:0;FCMPE	S1, #0;  (4) 
+0x401d74;:0;B.PL	401c40 <_Z19gaussian_box_mullerv+0x9c>;  (4) 
+0x401d78;:0;FCMPE	S0, #0;  (4) 
+0x401d7c;:0;B.MI	401d98 <_Z19gaussian_box_mullerv+0x1f4>;  (4) 
+0x401d80;:0;FMUL	S0, S11, S11;  (4) 
+0x401d84;:0;FMOV	S1, #0.5000000;  (4) 
+0x401d88;:0;FNMUL	S0, S1, S0;  (4) 
+0x401d8c;:0;BL	401540 <@plt_start@+0x230>;  (4) 
+0x401d90;:0;FCMPE	S8, S0;  (4) 
+0x401d94;:0;B.PL	401c40 <_Z19gaussian_box_mullerv+0x9c>;  (4) 
+0x401d98;:0;LDR	S0, [X29, #148];  (4) 
+0x401d9c;:0;SCVTF	S0, S0;  (4) 
+0x401da0;:0;FMUL	S11, S0, S11;  (4) 
+0x401da4;:0;FMADD	S0, S11, S10, S9;  (4) 
+0x401da8;:0;MOVZ	X16, #5200;  (4) 
+0x401dac;:0;LDP	X19, X20, [X29, #16];  (4) 
+0x401db0;:0;LDP	X21, X22, [X29, #32];  (4) 
+0x401db4;:0;LDP	X23, X24, [X29, #48];  (4) 
+0x401db8;:0;LDP	X25, X26, [X29, #64];  (4) 
+0x401dbc;:0;LDP	X27, X28, [X29, #80];  (4) 
+0x401dc0;:0;LDP	D8, D9, [X29, #96];  (4) 
+0x401dc4;:0;LDP	D10, D11, [X29, #112];  (4) 
+0x401dc8;:0;LDP	X29, X30, [SP];  (4) 
+0x401dcc;:0;ADD	SP, SP, X16,UXTX;  (4) 
+0x401dd0;:0;RET;  (4) 
+0x401dd4;:0;ORR	X0, XZR, X24;  (4) 
+0x401dd8;:0;BL	402640 <_ZN5boost6random23mersenne_twister_engineIjLm32ELm624ELm397ELm31ELj2567483615ELm11ELj4294967295ELm7ELj2636928640ELm15ELj4022730752ELm18ELj1812433253EE5twistEv>;  (4) 
+0x401ddc;:0;LDR	X19, [X24, #2496];  (4) 
+0x401de0;:0;B	401c48 <_Z19gaussian_box_mullerv+0xa4>;  (4) 
+0x401de4;:0;ADRP	X0, <420de4>;  (4) 
+0x401de8;:0;ADD	X23, X0, #3944;  (4) 
+0x401dec;:0;MOVZ	W26, #22144;  (4) 
+0x401df0;:0;ADD	X25, X23, #32;  (4) 
+0x401df4;:0;ADRP	X21, <403df4>;  (4) 
+0x401df8;:0;MOVK	W26, #40236;  (4) 
+0x401dfc;:0;STP	D12, D13, [X29, #128];  (4) 
+0x401e00;:0;MOVI	V12.2S, #0;    (7) 
+0x401e04;:0;ADRP	X23, <402e04>;    (7) 
+0x401e08;:0;ADD	X0, X23, #2048;    (7) 
+0x401e0c;:0;STR	X0, [X29, #152];    (7) 
+0x401e10;:0;CMP	X19, #624;      (12) 
+0x401e14;:0;B.EQ	401e9c <_Z19gaussian_box_mullerv+0x2f8>;      (12) 
+0x401e18;:0;LDR	W0, [X25, X19,LSL #2];        (14) 
+0x401e1c;:0;MOVZ	W28, #61382;        (14) 
+0x401e20;:0;ADD	X23, X21, #2144;        (14) 
+0x401e24;:0;LDR	S2, [X20, #2044];        (14) 
+0x401e28;:0;ADD	X19, X19, #1;        (14) 
+0x401e2c;:0;STR	X19, [X25, #2496];        (14) 
+0x401e30;:0;EOR	W0, W0, W0,LSR #11;        (14) 
+0x401e34;:0;AND	W1, W26, W0,LSL #7;        (14) 
+0x401e38;:0;EOR	W0, W0, W1;        (14) 
+0x401e3c;:0;AND	W1, W28, W0,LSL #15;        (14) 
+0x401e40;:0;EOR	W0, W0, W1;        (14) 
+0x401e44;:0;EOR	W0, W0, W0,LSR #18;        (14) 
+0x401e48;:0;AND	W24, W0, #448;        (14) 
+0x401e4c;:0;UBFM	W0, W0, #8, #31;        (14) 
+0x401e50;:0;UBFM	X1, X24, #61, #60;        (14) 
+0x401e54;:0;SCVTF	S11, W0;        (14) 
+0x401e58;:0;ADD	X22, X1, #8;        (14) 
+0x401e5c;:0;LDR	D1, [X23, X24,LSL #3];        (14) 
+0x401e60;:0;LDR	D0, [X22, X23];        (14) 
+0x401e64;:0;FMUL	S11, S11, S2;        (14) 
+0x401e68;:0;FCVT	S1, D1;        (14) 
+0x401e6c;:0;FCVT	S0, D0;        (14) 
+0x401e70;:0;FMUL	S11, S11, S1;        (14) 
+0x401e74;:0;FCMPE	S11, S0;        (14) 
+0x401e78;:0;B.MI	401f70 <_Z19gaussian_box_mullerv+0x3cc>;        (14) 
+0x401e7c;:0;ADRP	X27, <402e7c>;        (14) 
+0x401e80;:0;ADD	X27, X27, #2052;        (14) 
+0x401e84;:0;CBNZ	W24, 401ef4 <_Z19gaussian_box_mullerv+0x350>;        (14) 
+0x401e88;:0;LDR	X0, [X29, #152];        (14) 
+0x401e8c;:0;CMP	X19, #624;        (14) 
+0x401e90;:0;LDR	S0, [X0];        (14) 
+0x401e94;:0;FADD	S12, S12, S0;        (14) 
+0x401e98;:0;B.NE	401e18 <_Z19gaussian_box_mullerv+0x274>;        (14) 
+0x401e9c;:0;ORR	X0, XZR, X25;      (15) 
+0x401ea0;:0;BL	402640 <_ZN5boost6random23mersenne_twister_engineIjLm32ELm624ELm397ELm31ELj2567483615ELm11ELj4294967295ELm7ELj2636928640ELm15ELj4022730752ELm18ELj1812433253EE5twistEv>;      (15) 
+0x401ea4;:0;LDR	X19, [X25, #2496];      (12) 
+0x401ea8;:0;B	401e18 <_Z19gaussian_box_mullerv+0x274>;      (12) 
+0x401eac;:0;ORR	X0, XZR, X25;        (13) 
+0x401eb0;:0;BL	402640 <_ZN5boost6random23mersenne_twister_engineIjLm32ELm624ELm397ELm31ELj2567483615ELm11ELj4294967295ELm7ELj2636928640ELm15ELj4022730752ELm18ELj1812433253EE5twistEv>;        (13) 
+0x401eb4;:0;LDR	X19, [X25, #2496];        (13) 
+0x401eb8;:0;LDR	W0, [X25, X19,LSL #2];        (13) 
+0x401ebc;:0;FMOV	S1, #1.0000000;        (13) 
+0x401ec0;:0;LDR	S2, [X27];        (13) 
+0x401ec4;:0;ADD	X19, X19, #1;        (13) 
+0x401ec8;:0;STR	X19, [X25, #2496];        (13) 
+0x401ecc;:0;EOR	W0, W0, W0,LSR #11;        (13) 
+0x401ed0;:0;AND	W3, W26, W0,LSL #7;        (13) 
+0x401ed4;:0;EOR	W0, W0, W3;        (13) 
+0x401ed8;:0;AND	W3, W28, W0,LSL #15;        (13) 
+0x401edc;:0;EOR	W0, W0, W3;        (13) 
+0x401ee0;:0;EOR	W0, W0, W0,LSR #18;        (13) 
+0x401ee4;:0;UCVTF	S0, W0;        (13) 
+0x401ee8;:0;FMUL	S0, S0, S2;        (13) 
+0x401eec;:0;FCMPE	S0, S1;        (13) 
+0x401ef0;:0;B.MI	401f00 <_Z19gaussian_box_mullerv+0x35c>;        (13) 
+0x401ef4;:0;CMP	X19, #624;        (13) 
+0x401ef8;:0;B.NE	401eb8 <_Z19gaussian_box_mullerv+0x314>;        (13) 
+0x401efc;:0;B	401eac <_Z19gaussian_box_mullerv+0x308>;        (13) 
+0x401f00;:0;LDR	D2, [X23, X24,LSL #3];      (12) 
+0x401f04;:0;LDR	D4, [X22, X23];      (12) 
+0x401f08;:0;FSUB	D3, D2, S4;      (12) 
+0x401f0c;:0;FCVT	S2, D2;      (12) 
+0x401f10;:0;FCVT	S3, D3;      (12) 
+0x401f14;:0;FSUB	S2, S11, S2;      (12) 
+0x401f18;:0;FMADD	S2, S0, S3, S2;      (12) 
+0x401f1c;:0;FCMPE	S2, #0;      (12) 
+0x401f20;:0;B.PL	401e10 <_Z19gaussian_box_mullerv+0x26c>;      (12) 
+0x401f24;:0;ADRP	X0, <403f24>;      (12) 
+0x401f28;:0;ADD	X0, X0, #88;      (12) 
+0x401f2c;:0;FCVT	S4, D4;      (12) 
+0x401f30;:0;LDR	D3, [X0, X24,LSL #3];      (12) 
+0x401f34;:0;LDR	D2, [X22, X0];      (12) 
+0x401f38;:0;FSUB	S4, S11, S4;      (12) 
+0x401f3c;:0;FSUB	D8, D2, S3;      (12) 
+0x401f40;:0;FCVT	S2, D2;      (12) 
+0x401f44;:0;FSUB	S1, S4, S1;      (12) 
+0x401f48;:0;FCVT	S3, D3;      (12) 
+0x401f4c;:0;FCVT	S8, D8;      (12) 
+0x401f50;:0;FMADD	S8, S0, S8, S3;      (12) 
+0x401f54;:0;FMADD	S1, S1, S2, S8;      (12) 
+0x401f58;:0;FCMPE	S1, #0;      (12) 
+0x401f5c;:0;B.MI	401f70 <_Z19gaussian_box_mullerv+0x3cc>;      (12) 
+0x401f60;:0;FNEG	S0, S11;      (12) 
+0x401f64;:0;BL	401540 <@plt_start@+0x230>;      (12) 
+0x401f68;:0;FCMPE	S8, S0;      (12) 
+0x401f6c;:0;B.PL	401e10 <_Z19gaussian_box_mullerv+0x26c>;      (12) 
+0x401f70;:0;ADRP	X0, <402f70>;    (7) 
+0x401f74;:0;FADD	S11, S11, S12;    (7) 
+0x401f78;:0;MOVI	V13.2S, #0;    (7) 
+0x401f7c;:0;ADRP	X23, <402f7c>;    (7) 
+0x401f80;:0;LDR	S0, [X0, #2056];    (7) 
+0x401f84;:0;ADD	X0, X23, #2048;    (7) 
+0x401f88;:0;STR	X0, [X29, #152];    (7) 
+0x401f8c;:0;FMUL	S11, S11, S0;    (7) 
+0x401f90;:0;CMP	X19, #624;      (8) 
+0x401f94;:0;B.EQ	40201c <_Z19gaussian_box_mullerv+0x478>;      (8) 
+0x401f98;:0;LDR	W0, [X25, X19,LSL #2];        (10) 
+0x401f9c;:0;MOVZ	W28, #61382;        (10) 
+0x401fa0;:0;ADD	X23, X21, #2144;        (10) 
+0x401fa4;:0;LDR	S2, [X20, #2044];        (10) 
+0x401fa8;:0;ADD	X19, X19, #1;        (10) 
+0x401fac;:0;STR	X19, [X25, #2496];        (10) 
+0x401fb0;:0;EOR	W0, W0, W0,LSR #11;        (10) 
+0x401fb4;:0;AND	W1, W26, W0,LSL #7;        (10) 
+0x401fb8;:0;EOR	W0, W0, W1;        (10) 
+0x401fbc;:0;AND	W1, W28, W0,LSL #15;        (10) 
+0x401fc0;:0;EOR	W0, W0, W1;        (10) 
+0x401fc4;:0;EOR	W0, W0, W0,LSR #18;        (10) 
+0x401fc8;:0;AND	W22, W0, #448;        (10) 
+0x401fcc;:0;UBFM	W0, W0, #8, #31;        (10) 
+0x401fd0;:0;UBFM	X1, X22, #61, #60;        (10) 
+0x401fd4;:0;SCVTF	S12, W0;        (10) 
+0x401fd8;:0;ADD	X24, X1, #8;        (10) 
+0x401fdc;:0;LDR	D1, [X23, X22,LSL #3];        (10) 
+0x401fe0;:0;LDR	D0, [X24, X23];        (10) 
+0x401fe4;:0;FMUL	S12, S12, S2;        (10) 
+0x401fe8;:0;FCVT	S1, D1;        (10) 
+0x401fec;:0;FCVT	S0, D0;        (10) 
+0x401ff0;:0;FMUL	S12, S12, S1;        (10) 
+0x401ff4;:0;FCMPE	S12, S0;        (10) 
+0x401ff8;:0;B.MI	4020f0 <_Z19gaussian_box_mullerv+0x54c>;        (10) 
+0x401ffc;:0;ADRP	X27, <402ffc>;        (10) 
+0x402000;:0;ADD	X27, X27, #2052;        (10) 
+0x402004;:0;CBNZ	W22, 402074 <_Z19gaussian_box_mullerv+0x4d0>;        (10) 
+0x402008;:0;LDR	X0, [X29, #152];        (10) 
+0x40200c;:0;CMP	X19, #624;        (10) 
+0x402010;:0;LDR	S0, [X0];        (10) 
+0x402014;:0;FADD	S13, S13, S0;        (10) 
+0x402018;:0;B.NE	401f98 <_Z19gaussian_box_mullerv+0x3f4>;        (10) 
+0x40201c;:0;ORR	X0, XZR, X25;      (11) 
+0x402020;:0;BL	402640 <_ZN5boost6random23mersenne_twister_engineIjLm32ELm624ELm397ELm31ELj2567483615ELm11ELj4294967295ELm7ELj2636928640ELm15ELj4022730752ELm18ELj1812433253EE5twistEv>;      (11) 
+0x402024;:0;LDR	X19, [X25, #2496];      (8) 
+0x402028;:0;B	401f98 <_Z19gaussian_box_mullerv+0x3f4>;      (8) 
+0x40202c;:0;ORR	X0, XZR, X25;        (9) 
+0x402030;:0;BL	402640 <_ZN5boost6random23mersenne_twister_engineIjLm32ELm624ELm397ELm31ELj2567483615ELm11ELj4294967295ELm7ELj2636928640ELm15ELj4022730752ELm18ELj1812433253EE5twistEv>;        (9) 
+0x402034;:0;LDR	X19, [X25, #2496];        (9) 
+0x402038;:0;LDR	W0, [X25, X19,LSL #2];        (9) 
+0x40203c;:0;FMOV	S1, #1.0000000;        (9) 
+0x402040;:0;LDR	S2, [X27];        (9) 
+0x402044;:0;ADD	X19, X19, #1;        (9) 
+0x402048;:0;STR	X19, [X25, #2496];        (9) 
+0x40204c;:0;EOR	W0, W0, W0,LSR #11;        (9) 
+0x402050;:0;AND	W3, W26, W0,LSL #7;        (9) 
+0x402054;:0;EOR	W0, W0, W3;        (9) 
+0x402058;:0;AND	W3, W28, W0,LSL #15;        (9) 
+0x40205c;:0;EOR	W0, W0, W3;        (9) 
+0x402060;:0;EOR	W0, W0, W0,LSR #18;        (9) 
+0x402064;:0;UCVTF	S0, W0;        (9) 
+0x402068;:0;FMUL	S0, S0, S2;        (9) 
+0x40206c;:0;FCMPE	S0, S1;        (9) 
+0x402070;:0;B.MI	402080 <_Z19gaussian_box_mullerv+0x4dc>;        (9) 
+0x402074;:0;CMP	X19, #624;        (9) 
+0x402078;:0;B.NE	402038 <_Z19gaussian_box_mullerv+0x494>;        (9) 
+0x40207c;:0;B	40202c <_Z19gaussian_box_mullerv+0x488>;        (9) 
+0x402080;:0;LDR	D2, [X23, X22,LSL #3];      (8) 
+0x402084;:0;LDR	D4, [X24, X23];      (8) 
+0x402088;:0;FSUB	D3, D2, S4;      (8) 
+0x40208c;:0;FCVT	S2, D2;      (8) 
+0x402090;:0;FCVT	S3, D3;      (8) 
+0x402094;:0;FSUB	S2, S12, S2;      (8) 
+0x402098;:0;FMADD	S2, S0, S3, S2;      (8) 
+0x40209c;:0;FCMPE	S2, #0;      (8) 
+0x4020a0;:0;B.PL	401f90 <_Z19gaussian_box_mullerv+0x3ec>;      (8) 
+0x4020a4;:0;ADRP	X0, <4030a4>;      (8) 
+0x4020a8;:0;ADD	X0, X0, #88;      (8) 
+0x4020ac;:0;FCVT	S4, D4;      (8) 
+0x4020b0;:0;LDR	D3, [X0, X22,LSL #3];      (8) 
+0x4020b4;:0;LDR	D2, [X24, X0];      (8) 
+0x4020b8;:0;FSUB	S4, S12, S4;      (8) 
+0x4020bc;:0;FSUB	D8, D2, S3;      (8) 
+0x4020c0;:0;FCVT	S2, D2;      (8) 
+0x4020c4;:0;FSUB	S1, S4, S1;      (8) 
+0x4020c8;:0;FCVT	S3, D3;      (8) 
+0x4020cc;:0;FCVT	S8, D8;      (8) 
+0x4020d0;:0;FMADD	S8, S0, S8, S3;      (8) 
+0x4020d4;:0;FMADD	S1, S1, S2, S8;      (8) 
+0x4020d8;:0;FCMPE	S1, #0;      (8) 
+0x4020dc;:0;B.MI	4020f0 <_Z19gaussian_box_mullerv+0x54c>;      (8) 
+0x4020e0;:0;FNEG	S0, S12;      (8) 
+0x4020e4;:0;BL	401540 <@plt_start@+0x230>;      (8) 
+0x4020e8;:0;FCMPE	S8, S0;      (8) 
+0x4020ec;:0;B.PL	401f90 <_Z19gaussian_box_mullerv+0x3ec>;      (8) 
+0x4020f0;:0;FADD	S12, S12, S13;    (7) 
+0x4020f4;:0;FMUL	S0, S11, S11;    (7) 
+0x4020f8;:0;FADD	S12, S12, S12;    (7) 
+0x4020fc;:0;FCMPE	S12, S0;    (7) 
+0x402100;:0;B.GT	402134 <_Z19gaussian_box_mullerv+0x590>;    (7) 
+0x402104;:0;LDR	X19, [X25, #2496];    (7) 
+0x402108;:0;B	401e00 <_Z19gaussian_box_mullerv+0x25c>;    (7) 
+0x40210c;:0;ORR	X0, XZR, X20;
+0x402110;:0;BL	401530 <@plt_start@+0x220>;
+0x402114;:0;CBZ	W0, 401c00 <_Z19gaussian_box_mullerv+0x5c>;
+0x402118;:0;MOVI	V9.2S, #0;
+0x40211c;:0;FMOV	S10, #1.0000000;
+0x402120;:0;MOVZ	X1, #16256;
+0x402124;:0;STR	X1, [X19, #2544];
+0x402128;:0;ORR	X0, XZR, X20;
+0x40212c;:0;BL	401380 <@plt_start@+0x70>;
+0x402130;:0;B	401c08 <_Z19gaussian_box_mullerv+0x64>;
+0x402134;:0;ADRP	X0, 402134 <_Z19gaussian_box_mullerv+0x590>;  (4) 
+0x402138;:0;LDR	S0, [X29, #148];  (4) 
+0x40213c;:0;LDP	D12, D13, [X29, #128];  (4) 
+0x402140;:0;LDR	S1, [X0, #2060];  (4) 
+0x402144;:0;SCVTF	S0, S0;  (4) 
+0x402148;:0;FADD	S11, S11, S1;  (4) 
+0x40214c;:0;FMUL	S11, S0, S11;  (4) 
+0x402150;:0;B	401da4 <_Z19gaussian_box_mullerv+0x200>;  (4) 
+0x402154;:0;ADRP	X0, <404154>;
+0x402158;:0;ADD	X0, X0, #152;
+0x40215c;:0;ADD	X2, X29, #184;
+0x402160;:0;STRB	WZR, [X29, #191];
+0x402164;:0;MOVZ	X1, #7;
+0x402168;:0;STP	X2, X1, [X29, #168];
+0x40216c;:0;LDR	W4, [X0];
+0x402170;:0;ADD	X1, X29, #168;
+0x402174;:0;LDUR	W3, [X0, #3];
+0x402178;:0;ADD	X0, X29, #200;
+0x40217c;:0;STR	W4, [X29, #184];
+0x402180;:0;STUR	W3, [X2, #3];
+0x402184;:0;BL	401510 <@plt_start@+0x200>;
+0x402188;:0;ADD	X0, X29, #200;
+0x40218c;:0;BL	401480 <@plt_start@+0x170>;
+0x402190;:0;ADRP	X1, <420190>;
+0x402194;:0;ADD	X3, X1, #3944;
+0x402198;:0;STP	X19, X20, [X29, #16];
+0x40219c;:0;MOVZ	W2, #35173;
+0x4021a0;:0;STP	X21, X22, [X29, #32];
+0x4021a4;:0;MOVZ	X1, #1;
+0x4021a8;:0;STP	X23, X24, [X29, #48];
+0x4021ac;:0;MOVK	W2, #27655;
+0x4021b0;:0;STP	X25, X26, [X29, #64];
+0x4021b4;:0;STP	X27, X28, [X29, #80];
+0x4021b8;:0;STP	D8, D9, [X29, #96];
+0x4021bc;:0;STP	D10, D11, [X29, #112];
+0x4021c0;:0;STR	W0, [X3, #32]!;
+0x4021c4;:0;B	4021cc <_Z19gaussian_box_mullerv+0x628>;
+0x4021c8;:0;ADD	X1, X1, #1;(16) 
+0x4021cc;:0;EOR	W0, W0, W0,LSR #30;(16) 
+0x4021d0;:0;CMP	X1, #623;(16) 
+0x4021d4;:0;MADD	W0, W0, W2, W1;(16) 
+0x4021d8;:0;STR	W0, [X3, X1,LSL #2];(16) 
+0x4021dc;:0;B.NE	4021c8 <_Z19gaussian_box_mullerv+0x624>;(16) 
+0x4021e0;:0;LDR	W4, [X3, #1584];
+0x4021e4;:0;ADRP	X0, <4201e4>;
+0x4021e8;:0;LDR	W6, [X3, #2492];
+0x4021ec;:0;ADD	X1, X0, #3944;
+0x4021f0;:0;MOVZ	W5, #25023;
+0x4021f4;:0;MOVZ	X0, #624;
+0x4021f8;:0;EOR	W4, W4, W6;
+0x4021fc;:0;STR	X0, [X3, #2496];
+0x402200;:0;UBFM	W3, W4, #31, #30;
+0x402204;:0;ORR	X2, XZR, X1;
+0x402208;:0;CMP	W4, #0;
+0x40220c;:0;LDR	W1, [X1, #32];
+0x402210;:0;MOVK	W5, #12817;
+0x402214;:0;EOR	W4, W3, W5;
+0x402218;:0;CSEL	W3, W4, W3, #11;
+0x40221c;:0;AND	W1, W1, #1;
+0x402220;:0;AND	W3, W3, #1920;
+0x402224;:0;MOVZ	X0, #0;
+0x402228;:0;ORR	W1, W1, W3;
+0x40222c;:0;STR	W1, [X2, #32]!;
+0x402230;:0;CBNZ	W1, 402254 <_Z19gaussian_box_mullerv+0x6b0>;
+0x402234;:0;HINT	#0;
+0x402238;:0;HINT	#0;
+0x40223c;:0;HINT	#0;
+0x402240;:0;ADD	X0, X0, #1;(17) 
+0x402244;:0;CMP	X0, #624;(17) 
+0x402248;:0;B.EQ	402284 <_Z19gaussian_box_mullerv+0x6e0>;(17) 
+0x40224c;:0;LDR	W1, [X2, X0,LSL #2];(17) 
+0x402250;:0;CBZ	W1, 402240 <_Z19gaussian_box_mullerv+0x69c>;(17) 
+0x402254;:0;ADRP	X0, <420254>;
+0x402258;:0;ADD	X0, X0, #3944;
+0x40225c;:0;ADD	X0, X0, #24;
+0x402260;:0;BL	401380 <@plt_start@+0x70>;
+0x402264;:0;ADD	X0, X29, #200;
+0x402268;:0;BL	4013e0 <@plt_start@+0xd0>;
+0x40226c;:0;LDR	X0, [X29, #168];
+0x402270;:0;ADD	X1, X29, #184;
+0x402274;:0;CMP	X0, X1;
+0x402278;:0;B.EQ	401bec <_Z19gaussian_box_mullerv+0x48>;
+0x40227c;:0;BL	4013f0 <@plt_start@+0xe0>;
+0x402280;:0;B	401bec <_Z19gaussian_box_mullerv+0x48>;
+0x402284;:0;ADRP	X0, <420284>;
+0x402288;:0;ADD	X0, X0, #3944;
+0x40228c;:0;MOVZ	W1, #32768;
+0x402290;:0;STR	W1, [X0, #32];
+0x402294;:0;B	402254 <_Z19gaussian_box_mullerv+0x6b0>;
+0x402298;:0;STR	X19, [X29, #16];
+0x40229c;:0;ORR	X19, XZR, X0;
+0x4022a0;:0;ADD	X0, X29, #200;
+0x4022a4;:0;BL	4013e0 <@plt_start@+0xd0>;
+0x4022a8;:0;LDR	X0, [X29, #168];(3) 
+0x4022ac;:0;ADD	X1, X29, #184;(3) 
+0x4022b0;:0;STP	X20, X21, [X29, #24];(3) 
+0x4022b4;:0;STP	X22, X23, [X29, #40];(3) 
+0x4022b8;:0;CMP	X0, X1;(3) 
+0x4022bc;:0;STP	X24, X25, [X29, #56];(3) 
+0x4022c0;:0;STP	X26, X27, [X29, #72];(3) 
+0x4022c4;:0;STR	X28, [X29, #88];(3) 
+0x4022c8;:0;STP	D8, D9, [X29, #96];(3) 
+0x4022cc;:0;STP	D10, D11, [X29, #112];(3) 
+0x4022d0;:0;STP	D12, D13, [X29, #128];(3) 
+0x4022d4;:0;B.EQ	4022dc <_Z19gaussian_box_mullerv+0x738>;(3) 
+0x4022d8;:0;BL	4013f0 <@plt_start@+0xe0>;(3) 
+0x4022dc;:0;ADRP	X0, <4202dc>;(3) 
+0x4022e0;:0;ADD	X0, X0, #3944;(3) 
+0x4022e4;:0;ADD	X0, X0, #24;(3) 
+0x4022e8;:0;BL	401370 <@plt_start@+0x60>;(3) 
+0x4022ec;:0;ORR	X0, XZR, X19;(3) 
+0x4022f0;:0;BL	401520 <@plt_start@+0x210>;(3) 
+0x4022f4;:0;STR	X19, [X29, #16];(3) 
+0x4022f8;:0;ORR	X19, XZR, X0;(3) 
+0x4022fc;:0;B	4022a8 <_Z19gaussian_box_mullerv+0x704>;(3) 

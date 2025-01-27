@@ -1,0 +1,6 @@
+name;time_p;time_s;cpi_ratio;
+/usr/lib64/libm-2.26.so;56.150882720947;90.719841003418;;
+/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-31-05/binaries/BSM-MPI+BOOST_compil;43.839942932129;70.829742431641;;
+/opt/amazon/openmpi/lib64/libmpi.so.40.30.6;0.0030947406776249;0.00499999942258;;
+/usr/lib64/ld-2.26.so;0.0030947406776249;0.00499999942258;;
+/usr/lib64/libc-2.26.so;0.0030947406776249;0.00499999942258;;

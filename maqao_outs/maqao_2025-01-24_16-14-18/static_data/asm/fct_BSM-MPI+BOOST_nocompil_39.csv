@@ -1,0 +1,8 @@
+address;source_location;insn;indent
+0x402ba0;:0;STP	X29, X30, [SP, #976]!;
+0x402ba4;:0;ADD	X29, SP, #0;
+0x402ba8;:0;STR	X0, [X29, #24];
+0x402bac;:0;LDR	X0, [X29, #24];
+0x402bb0;:0;BL	402d0c <_ZN5boost6random6detail23generate_int_float_pairIfLm8ENS0_23mersenne_twister_engineIjLm32ELm624ELm397ELm31ELj2567483615ELm11ELj4294967295ELm7ELj2636928640ELm15ELj4022730752ELm18ELj1812433253EEEEESt4pairIT_iERT1_NS_17integral_constantIbLb1EEE>;
+0x402bb4;:0;LDP	X29, X30, [SP], #48;
+0x402bb8;:0;RET;

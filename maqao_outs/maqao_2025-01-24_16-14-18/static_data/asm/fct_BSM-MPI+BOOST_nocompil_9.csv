@@ -1,0 +1,132 @@
+address;source_location;insn;indent
+0x4019d4;:0;STP	X29, X30, [SP, #864]!;
+0x4019d8;:0;ADD	X29, SP, #0;
+0x4019dc;:0;STP	D8, D9, [SP, #16];
+0x4019e0;:0;STR	D10, [SP, #32];
+0x4019e4;:0;STR	X0, [X29, #88];
+0x4019e8;:0;STR	X1, [X29, #80];
+0x4019ec;:0;STR	S0, [X29, #76];
+0x4019f0;:0;STR	S1, [X29, #72];
+0x4019f4;:0;STR	S2, [X29, #68];
+0x4019f8;:0;STR	S3, [X29, #64];
+0x4019fc;:0;STR	X2, [X29, #56];
+0x401a00;:0;ADD	X1, X29, #120;
+0x401a04;:0;ADRP	X0, <420a04>;
+0x401a08;:0;ADD	X0, X0, #2432;
+0x401a0c;:0;BL	401580 <@plt_start@+0x1a0>;
+0x401a10;:0;ADD	X1, X29, #116;
+0x401a14;:0;ADRP	X0, <420a14>;
+0x401a18;:0;ADD	X0, X0, #2432;
+0x401a1c;:0;BL	401520 <@plt_start@+0x140>;
+0x401a20;:0;LDR	W0, [X29, #116];
+0x401a24;:0;SBFM	X0, X0, #0, #31;
+0x401a28;:0;LDR	X1, [X29, #56];
+0x401a2c;:0;UDIV	X0, X1, X0;
+0x401a30;:0;STR	X0, [X29, #152];
+0x401a34;:0;LDR	W0, [X29, #116];
+0x401a38;:0;SUB	W1, W0, #1;
+0x401a3c;:0;LDR	W0, [X29, #120];
+0x401a40;:0;CMP	W1, W0;
+0x401a44;:0;B.NE	401a6c <_Z25black_scholes_monte_carlommffffm+0x98>;
+0x401a48;:0;LDR	W0, [X29, #116];
+0x401a4c;:0;SBFM	X1, X0, #0, #31;
+0x401a50;:0;LDR	X0, [X29, #56];
+0x401a54;:0;UDIV	X2, X0, X1;
+0x401a58;:0;MADD	X1, X2, X1, XZR;
+0x401a5c;:0;SUB	X0, X0, X1;
+0x401a60;:0;LDR	X1, [X29, #152];
+0x401a64;:0;ADD	X0, X1, X0;
+0x401a68;:0;STR	X0, [X29, #152];
+0x401a6c;:0;STR	WZR, [X29, #112];
+0x401a70;:0;STR	XZR, [X29, #144];
+0x401a74;:0;LDR	X1, [X29, #144];(0) 
+0x401a78;:0;LDR	X0, [X29, #152];(0) 
+0x401a7c;:0;CMP	X1, X0;(0) 
+0x401a80;:0;B.CS	401b48 <_Z25black_scholes_monte_carlommffffm+0x174>;(0) 
+0x401a84;:0;BL	4017fc <_Z19gaussian_box_mullerv>;(0) 
+0x401a88;:0;STR	S0, [X29, #140];(0) 
+0x401a8c;:0;LDR	X0, [X29, #88];(0) 
+0x401a90;:0;UCVTF	D8, X0;(0) 
+0x401a94;:0;LDR	S1, [X29, #72];(0) 
+0x401a98;:0;LDR	S0, [X29, #64];(0) 
+0x401a9c;:0;FSUB	S1, S1, S0;(0) 
+0x401aa0;:0;LDR	S2, [X29, #68];(0) 
+0x401aa4;:0;FMOV	S0, #0.5000000;(0) 
+0x401aa8;:0;FMUL	S2, S2, S0;(0) 
+0x401aac;:0;LDR	S0, [X29, #68];(0) 
+0x401ab0;:0;FMUL	S0, S2, S0;(0) 
+0x401ab4;:0;FSUB	S1, S1, S0;(0) 
+0x401ab8;:0;LDR	S0, [X29, #76];(0) 
+0x401abc;:0;FMUL	S0, S1, S0;(0) 
+0x401ac0;:0;FCVT	D9, S0;(0) 
+0x401ac4;:0;LDR	S0, [X29, #68];(0) 
+0x401ac8;:0;FCVT	D10, S0;(0) 
+0x401acc;:0;LDR	S0, [X29, #76];(0) 
+0x401ad0;:0;FCVT	D0, S0;(0) 
+0x401ad4;:0;BL	401670 <@plt_start@+0x290>;(0) 
+0x401ad8;:0;FMUL	D1, D10, D0;(0) 
+0x401adc;:0;LDR	S0, [X29, #140];(0) 
+0x401ae0;:0;FCVT	D0, S0;(0) 
+0x401ae4;:0;FMUL	D0, D1, D0;(0) 
+0x401ae8;:0;FADD	D0, D9, D0;(0) 
+0x401aec;:0;BL	401530 <@plt_start@+0x150>;(0) 
+0x401af0;:0;FMUL	D0, D8, D0;(0) 
+0x401af4;:0;FCVT	S0, D0;(0) 
+0x401af8;:0;STR	S0, [X29, #136];(0) 
+0x401afc;:0;LDR	X0, [X29, #80];(0) 
+0x401b00;:0;UCVTF	S0, X0;(0) 
+0x401b04;:0;LDR	S1, [X29, #136];(0) 
+0x401b08;:0;FSUB	S0, S1, S0;(0) 
+0x401b0c;:0;STR	S0, [X29, #124];(0) 
+0x401b10;:0;STR	WZR, [X29, #128];(0) 
+0x401b14;:0;ADD	X1, X29, #128;(0) 
+0x401b18;:0;ADD	X0, X29, #124;(0) 
+0x401b1c;:0;BL	4025c8 <_ZSt3maxIfERKT_S2_S2_>;(0) 
+0x401b20;:0;LDR	S0, [X0];(0) 
+0x401b24;:0;STR	S0, [X29, #132];(0) 
+0x401b28;:0;LDR	S1, [X29, #112];(0) 
+0x401b2c;:0;LDR	S0, [X29, #132];(0) 
+0x401b30;:0;FADD	S0, S1, S0;(0) 
+0x401b34;:0;STR	S0, [X29, #112];(0) 
+0x401b38;:0;LDR	X0, [X29, #144];(0) 
+0x401b3c;:0;ADD	X0, X0, #1;(0) 
+0x401b40;:0;STR	X0, [X29, #144];(0) 
+0x401b44;:0;B	401a74 <_Z25black_scholes_monte_carlommffffm+0xa0>;(0) 
+0x401b48;:0;STR	WZR, [X29, #108];
+0x401b4c;:0;ADRP	X0, <420b4c>;
+0x401b50;:0;ADD	X4, X0, #2432;
+0x401b54;:0;ADRP	X0, <420b54>;
+0x401b58;:0;ADD	X3, X0, #384;
+0x401b5c;:0;ADRP	X0, <420b5c>;
+0x401b60;:0;ADD	X2, X0, #2944;
+0x401b64;:0;ADD	X1, X29, #108;
+0x401b68;:0;ADD	X0, X29, #112;
+0x401b6c;:0;ORR	X6, XZR, X4;
+0x401b70;:0;MOVZ	W5, #0;
+0x401b74;:0;ORR	X4, XZR, X3;
+0x401b78;:0;ORR	X3, XZR, X2;
+0x401b7c;:0;MOVZ	W2, #1;
+0x401b80;:0;BL	401550 <@plt_start@+0x170>;
+0x401b84;:0;LDR	W0, [X29, #120];
+0x401b88;:0;CMP	W0, #0;
+0x401b8c;:0;B.NE	401bcc <_Z25black_scholes_monte_carlommffffm+0x1f8>;
+0x401b90;:0;LDR	S0, [X29, #72];
+0x401b94;:0;FNEG	S1, S0;
+0x401b98;:0;LDR	S0, [X29, #76];
+0x401b9c;:0;FMUL	S0, S1, S0;
+0x401ba0;:0;FCVT	D0, S0;
+0x401ba4;:0;BL	401530 <@plt_start@+0x150>;
+0x401ba8;:0;FMOV	D2, D0;
+0x401bac;:0;LDR	S1, [X29, #108];
+0x401bb0;:0;LDR	X0, [X29, #56];
+0x401bb4;:0;UCVTF	S0, X0;
+0x401bb8;:0;FDIV	S0, S1, S0;
+0x401bbc;:0;FCVT	D0, S0;
+0x401bc0;:0;FMUL	D0, D2, D0;
+0x401bc4;:0;FCVT	S0, D0;
+0x401bc8;:0;B	401bd0 <_Z25black_scholes_monte_carlommffffm+0x1fc>;
+0x401bcc;:0;MOVI	V0.2S, #0;
+0x401bd0;:0;LDP	D8, D9, [SP, #16];
+0x401bd4;:0;LDR	D10, [SP, #32];
+0x401bd8;:0;LDP	X29, X30, [SP], #160;
+0x401bdc;:0;RET;

@@ -1,0 +1,4 @@
+name;time_p;time_s;cpi_ratio;
+/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-14-07/binaries/BSM_original_nocompil;55.842010498047;1.8399988412857;;
+/usr/lib64/libm-2.26.so;22.458221435547;0.74000024795532;;
+/opt/arm/gcc-14.2.0_AmazonLinux-2/lib64/libgcc_s.so.1;21.699502944946;0.71500039100647;;

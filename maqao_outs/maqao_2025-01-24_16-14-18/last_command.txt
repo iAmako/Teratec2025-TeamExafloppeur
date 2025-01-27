@@ -1,0 +1,1 @@
+../maqao.aarch64.2.21.1/bin/maqao oneview -R1 -dx=MAQAO_OUT_DIR/BSM-MPI+BOOST_original_nocompil --config=../maqao_configs/config_mpi+boost_nocompil.json 

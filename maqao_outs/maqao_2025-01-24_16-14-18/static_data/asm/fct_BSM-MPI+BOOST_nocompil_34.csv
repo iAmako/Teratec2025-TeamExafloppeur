@@ -1,0 +1,15 @@
+address;source_location;insn;indent
+0x4025c8;:0;SUB	SP, SP, #16;
+0x4025cc;:0;STR	X0, [SP, #8];
+0x4025d0;:0;STR	X1, [SP];
+0x4025d4;:0;LDR	X0, [SP, #8];
+0x4025d8;:0;LDR	S1, [X0];
+0x4025dc;:0;LDR	X0, [SP];
+0x4025e0;:0;LDR	S0, [X0];
+0x4025e4;:0;FCMPE	S1, S0;
+0x4025e8;:0;B.PL	4025f4 <_ZSt3maxIfERKT_S2_S2_+0x2c>;
+0x4025ec;:0;LDR	X0, [SP];
+0x4025f0;:0;B	4025f8 <_ZSt3maxIfERKT_S2_S2_+0x30>;
+0x4025f4;:0;LDR	X0, [SP, #8];
+0x4025f8;:0;ADD	SP, SP, #16;
+0x4025fc;:0;RET;

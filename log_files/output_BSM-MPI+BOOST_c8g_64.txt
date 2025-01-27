@@ -1,0 +1,2 @@
+Global initial seed: 2039106966      argv[1]= 10000000     argv[2]= 1000000
+ value= 5.151851 in 2526.409786 seconds

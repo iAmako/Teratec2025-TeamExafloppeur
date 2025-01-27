@@ -1,0 +1,7 @@
+name;time_p;time_s;cpi_ratio;
+/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-14-18/binaries/BSM-MPI+BOOST_nocompil;78.430923461914;773.62219238281;;
+/usr/lib64/libm-2.26.so;21.566291809082;212.72427368164;;
+/opt/amazon/openmpi/lib64/libmpi.so.40.30.6;0.0015207212418318;0.014999998733401;;
+/opt/amazon/openmpi/lib64/libopen-pal.so.40.30.3;0.0005069071194157;0.00499999942258;;
+/opt/amazon/openmpi/lib64/openmpi/mca_coll_self.so;0.0005069071194157;0.00499999942258;;
+/usr/lib64/ld-2.26.so;0.0005069071194157;0.00499999942258;;

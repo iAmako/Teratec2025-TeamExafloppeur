@@ -1,0 +1,6 @@
+********************************************************************************
+MAQAO 2.21.1 - a9bb74606c7e260f7f87782e64f16b00a6f20c1b::20250121-112452 || 2025/01/21
+../maqao.aarch64.2.21.1/bin/maqao oneview -R1 -dx=MAQAO_OUT_DIR/BSM_original_compil --config=../maqao_configs/config_original_compil.json 
+CPY:  [true] ../exe_files/BSM_original_nocompil --> /fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-14-07/binaries/BSM_original_nocompil
+CMD:   /fsx/home/etud4-3/Team_Exafloppeurs/scripts/../maqao.aarch64.2.21.1/bin/maqao lprof _caller=oneview  --xp="/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-14-07/tools/lprof_npsu_run_0" --mpi-command="" --collect-CPU-time-intervals --collect-topology   -- /fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-14-07/binaries/BSM_original_nocompil 10000 1000
+CMD:  /fsx/home/etud4-3/Team_Exafloppeurs/scripts/../maqao.aarch64.2.21.1/bin/maqao otter  -input=/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-14-07/OTTER/input_manifest.csv -output=/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-14-07/OTTER/output_manifest.csv

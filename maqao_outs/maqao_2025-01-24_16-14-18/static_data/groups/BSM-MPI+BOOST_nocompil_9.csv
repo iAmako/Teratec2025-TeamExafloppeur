@@ -1,0 +1,2 @@
+group_size;pattern;opcodes;offsets;addresses;stride_status;stride;memory_status;accessed_memory;accessed_memory_nooverlap;accessed_memory_overlap;span;head;unroll_factor;
+5;LSLLL;LDR,STR,LDR,LDR,LDR,;40,64,68,68,64,;0x40327c,0x4032a0,0x4032a4,0x4032b0,0x4032b8,;Success;0;Success;24;16;8;32;0;1;

@@ -1,0 +1,20 @@
+address;source_location;insn;indent
+0x4032e0;:0;STP	X29, X30, [SP, #960]!;
+0x4032e4;:0;ADD	X29, SP, #0;
+0x4032e8;:0;STR	X19, [SP, #16];
+0x4032ec;:0;STR	X0, [X29, #40];
+0x4032f0;:0;STR	X1, [X29, #32];
+0x4032f4;:0;LDR	X0, [X29, #40];
+0x4032f8;:0;BL	403908 <_ZSt7forwardIRfEOT_RNSt16remove_referenceIS1_E4typeE>;
+0x4032fc;:0;ORR	X19, XZR, X0;
+0x403300;:0;LDR	X0, [X29, #32];
+0x403304;:0;BL	40391c <_ZSt7forwardIRiEOT_RNSt16remove_referenceIS1_E4typeE>;
+0x403308;:0;ORR	X1, XZR, X0;
+0x40330c;:0;ADD	X0, X29, #56;
+0x403310;:0;ORR	X2, XZR, X1;
+0x403314;:0;ORR	X1, XZR, X19;
+0x403318;:0;BL	403930 <_ZNSt4pairIfiEC1IRfRiLb1EEEOT_OT0_>;
+0x40331c;:0;LDR	X0, [X29, #56];
+0x403320;:0;LDR	X19, [SP, #16];
+0x403324;:0;LDP	X29, X30, [SP], #64;
+0x403328;:0;RET;

@@ -1,0 +1,8 @@
+address;source_location;insn;indent
+0x4022c8;:0;STP	X29, X30, [SP, #992]!;
+0x4022cc;:0;ADD	X29, SP, #0;
+0x4022d0;:0;STR	S0, [X29, #28];
+0x4022d4;:0;LDR	S0, [X29, #28];
+0x4022d8;:0;BL	4015b0 <@plt_start@+0x1d0>;
+0x4022dc;:0;LDP	X29, X30, [SP], #32;
+0x4022e0;:0;RET;

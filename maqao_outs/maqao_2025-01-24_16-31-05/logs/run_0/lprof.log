@@ -1,0 +1,25 @@
+
+* Info: "ref-cycles" not supported on ip-10-0-4-202: fallback to "cpu-clock"Global initial seed: 772654164      argv[1]= 100000     argv[2]= 100000
+ value= 5.136834 in 164.385081 seconds
+
+* Info: Dumping samples (host ip-10-0-4-202, process 19067)
+* Info: Dumping source info for callchain nodes (host ip-10-0-4-202, process 19067)
+* Info: Building/writing metadata (host ip-10-0-4-202)
+* Info: Finished collect step (host ip-10-0-4-202, process 19067)
+
+Your experiment path is /fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-31-05/tools/lprof_npsu_run_0
+
+To display your profiling results:
+########################################################################################################################################################
+#    LEVEL    |     REPORT     |                                                        COMMAND                                                        #
+########################################################################################################################################################
+#  Functions  |  Cluster-wide  |  maqao lprof -df xp=/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-31-05/tools/lprof_npsu_run_0      #
+#  Functions  |  Per-node      |  maqao lprof -df -dn xp=/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-31-05/tools/lprof_npsu_run_0  #
+#  Functions  |  Per-process   |  maqao lprof -df -dp xp=/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-31-05/tools/lprof_npsu_run_0  #
+#  Functions  |  Per-thread    |  maqao lprof -df -dt xp=/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-31-05/tools/lprof_npsu_run_0  #
+#  Loops      |  Cluster-wide  |  maqao lprof -dl xp=/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-31-05/tools/lprof_npsu_run_0      #
+#  Loops      |  Per-node      |  maqao lprof -dl -dn xp=/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-31-05/tools/lprof_npsu_run_0  #
+#  Loops      |  Per-process   |  maqao lprof -dl -dp xp=/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-31-05/tools/lprof_npsu_run_0  #
+#  Loops      |  Per-thread    |  maqao lprof -dl -dt xp=/fsx/home/etud4-3/Team_Exafloppeurs/scripts/maqao_2025-01-24_16-31-05/tools/lprof_npsu_run_0  #
+########################################################################################################################################################
+

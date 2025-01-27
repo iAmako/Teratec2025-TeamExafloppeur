@@ -1,0 +1,3 @@
+group_size;pattern;opcodes;offsets;addresses;stride_status;stride;memory_status;accessed_memory;accessed_memory_nooverlap;accessed_memory_overlap;span;head;unroll_factor;
+1;L;LDR,;0,;0x401acc,;Not found;0;Success;8;8;0;8;0;1;
+23;LLSLLLLLLLLLSLLSSSLLSLS;LDR,LDR,STR,LDR,LDR,LDR,LDR,LDR,LDR,LDR,LDR,LDR,STR,LDR,LDR,STR,STR,STR,LDR,LDR,STR,LDR,STR,;144,40,136,88,64,48,56,56,72,72,56,136,128,80,128,104,112,120,152,120,152,144,144,;0x401a30,0x401a34,0x401a44,0x401a48,0x401a50,0x401a54,0x401a5c,0x401a68,0x401a74,0x401a7c,0x401a88,0x401a90,0x401aa4,0x401aa8,0x401ab0,0x401ab8,0x401abc,0x401ad0,0x401ad4,0x401ad8,0x401ae0,0x401ae4,0x401aec,;Success;0;Success;184;112;72;120;0;1;

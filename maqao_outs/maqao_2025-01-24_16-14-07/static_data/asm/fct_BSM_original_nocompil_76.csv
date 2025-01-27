@@ -1,0 +1,3 @@
+address;source_location;insn;indent
+0x4032b8;:0;MOVZ	X0, #0;
+0x4032bc;:0;RET;

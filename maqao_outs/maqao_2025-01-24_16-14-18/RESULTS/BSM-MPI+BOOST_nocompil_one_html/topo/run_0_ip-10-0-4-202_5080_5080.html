@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html translate="no" lang="en-US"><head><title>OV -  - Profiling node ip-10-0-4-202 - process 5080 - thread 5080</title>
+<meta charset="utf-8" />
+<meta name="google" content="notranslate" />
+<link rel="stylesheet" type="text/css" media="screen" href="../css/ui.jqgrid.css" />
+<link rel="stylesheet" type="text/css" href="../css/themes/redmond_custom/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="../css/themes/redmond_custom/jquery.jqplot.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/MAQAO_theme.css" />
+<link rel="stylesheet" type="text/css" href="../css/maqao_modal.css" />
+<link rel="stylesheet" type="text/css" href="../css/global.css" />
+<link rel="stylesheet" type="text/css" href="../css/maqao_menu.css" />
+<script src="../js/jquery-1.9.0.min.js" ></script>
+<script src="../js/jquery-ui-1.10.3.custom.min.js" ></script>
+<script src="../js/grid.locale-en.js" ></script>
+<script src="../js/jquery.jqGrid.min.js" ></script>
+<script src="../js/d3.min.js" ></script>
+<script class="include" src="../js/jquery.jqplot.min.js"></script>
+<script class="include" src="../js/jqplot.pieRenderer.min.js"></script>
+<script class="include" src="../js/jqplot.barRenderer.min.js"></script>
+<script class="include" src="../js/jqplot.categoryAxisRenderer.min.js"></script>
+<script class="include" src="../js/jqplot.pointLabels.min.js"></script>
+<script class="include" src="../js/jqplot.cursor.min.js"></script>
+<script class="include" src="../js/jqplot.canvasTextRenderer.min.js"></script>
+<script class="include" src="../js/jqplot.canvasAxisTickRenderer.min.js"></script>
+<script class="include" src="../js/jqplot.canvasAxisLabelRenderer.min.js"></script>
+<script class="include" src="../js/jqplot.enhancedLegendRenderer.min.js"></script>
+<script class="include" src="../js/jqplot.highlighter.min.js"></script>
+<script class="include" src="../js/jqplot.logAxisRenderer.min.js"></script>
+<script class="include" src="../js/maqao_menu.js"></script>
+<script>
+$( function() {
+  $( document ).tooltip({
+    content: function() {
+      if (this.classList.contains ("tooltip-maqao")
+      ||  this.classList.contains ("tooltip-maqao-button")) {
+        return tooltips_texts[$(this).attr('tooltip_id')];
+      }
+    },
+    position: {
+      my: "center bottom-20",
+        at: "center top",
+        using: function( position, feedback ) {
+          $( this ).css( position );
+          $( "<div>" )
+            .addClass( "arrow-tt" )
+            .addClass( feedback.vertical )
+            .addClass( feedback.horizontal )
+            .appendTo( this );
+        }
+      }
+  });
+} );
+
+// Code from https://www.htmlgoodies.com/beyond/javascript/article.php/3724571/Using-Multiple-JavaScript-Onload-Functions.htm
+function addLoadEvent(func) {
+  var oldonload = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  } else {
+    window.onload = function() {
+      if (oldonload) {
+        oldonload();
+      }
+      func();
+    }
+  }
+}
+function loadCSS(filename){ 
+  var file = document.createElement("link");
+  file.setAttribute("rel", "stylesheet");
+  file.setAttribute("type", "text/css");
+  file.setAttribute("href", filename);
+  document.head.appendChild(file);
+}
+addLoadEvent(function(){
+  var theme = localStorage.getItem("__MAQAO_OV_theme__");
+  if (theme) {
+    loadCSS("../css/"+theme+".css");
+  }
+  else {
+    localStorage.setItem("__MAQAO_OV_theme__", "MAQAO_theme");
+    loadCSS("../css/MAQAO_theme.css");
+  }
+});
+</script>
+</head><body>
+<div id="page_title"><img alt="MAQAO" id="maqao_logo" src="../images/MAQAO_small_logo.png"/><ul id="maqao_menu"><li ><a  href="../index.html">Global</a><ul><li ><a  href="../config.html">Configurations</a></li><li ><a  href="../env.html">Environment Variables</a></li><li ><a  href="../outputs.html">Outputs</a></li><li ><a  href="../log.html">Logs</a></li></ul></li><li ><a  href="../summary.html">Summary</a></li><li ><a  href="../application.html">Application</a></li><li ><a  href="../fcts_and_loops.html">Functions</a></li><li ><a  href="../loops_index.html">Loops</a></li><li ><a  href="../topology.html">Topology</a><ul><li ><a  href="../lstopo.html">lstopo</a></li><li ><a  href="../lstopo_PU.html">lstopo_PU</a></li><li ><a  href="../lstopo_threads.html">lstopo_threads</a></li></ul></li></ul>
+<span><img alt="options" id="menu_options_icon" src="../images/gear_20.png"  onclick="__open_options ()"/></span>
+</div>
+<script>
+function __change_theme () {
+  var new_theme = document.getElementById("select_theme").value;
+  localStorage.setItem("__MAQAO_OV_theme__", new_theme);
+    loadCSS("../css/"+new_theme+".css");
+}
+function __open_options () {
+  var elem = document.getElementById ("options_configuration");
+  if (elem.dataset.open == "false") {
+    elem.dataset.open = "true";
+    elem.style.display = "block";
+  }
+  else {
+    elem.dataset.open = "false";
+    elem.style.display = "none";
+  }
+}
+</script>
+<div id="anchor_file_start"></div>
+<div id="maqao_content">
+<div>
+  <div id="spacer_page_title" ></div>
+  <div id="options_configuration" data-open="false" style="display:none;">
+    <h3 id="options_configuration_header">Report Configuration</h3>
+    <span style="margin-left:10px;"><label for="select_theme">Theme: </label>    <select name="theme" id="select_theme" onchange="__change_theme ()">  <option value="MAQAO_theme">MAQAO_theme</option>  <option value="darkgrey">darkgrey</option>  <option value="cyan">cyan</option></select></span></div>
+</div>
+<script>
+  let theme = localStorage.getItem("__MAQAO_OV_theme__");
+  if (theme) {
+    document.getElementById("select_theme").value = theme;
+  }
+document.getElementById("spacer_page_title").style.height = (document.getElementById("page_title").clientHeight + 25)+"px";
+var obj = document.getElementById("page_title");
+if (obj) {
+  var elems = document.getElementsByClassName ("_first_menu_level")
+  if (obj.clientHeight < 90) {
+    for (var i = 0; i < elems.length; i++) {
+      elems.item(i).style.borderBottomLeftRadius = "";
+      elems.item(i).style.borderBottomRightRadius = "";
+    }
+  }
+  else {
+    for (var i = 0; i < elems.length; i++) {
+      elems.item(i).style.borderBottomLeftRadius = "10px";
+      elems.item(i).style.borderBottomRightRadius = "10px";
+    }
+  }
+}
+</script>
+<div class="_accordion_box collapsed" ><h3 id="_accordion_header_1" class="_header collapsed" onclick="_click_accordion_header(this)" ><span class="_accordion_box_button">&#x25B6;</span>Environment Variables<span class="tooltip-maqao-button help-maqao" title="" tooltip_id="0" ></span></h3><div id="_accordion_content_1" class="_content collapsed"><pre style="margin: 0px">MANPATH=/opt/arm/arm-linux-compiler-24.10.1_AmazonLinux-2/share/man:/opt/arm/gcc-14.2.0_AmazonLinux-2/share/man:/opt/slurm/share/man</pre>
+<pre style="margin: 0px">ARMPL_LIBRARIES=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/lib</pre>
+<pre style="margin: 0px">XDG_SESSION_ID=873</pre>
+<pre style="margin: 0px">HOSTNAME=ip-10-0-4-202</pre>
+<pre style="margin: 0px">SHELL=/bin/bash</pre>
+<pre style="margin: 0px">TERM=xterm-256color</pre>
+<pre style="margin: 0px">HISTSIZE=1000</pre>
+<pre style="margin: 0px">SSH_CLIENT=194.199.64.71 10401 22</pre>
+<pre style="margin: 0px">LIBRARY_PATH=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/lib:/opt/arm/arm-linux-compiler-24.10.1_AmazonLinux-2/lib:/opt/arm/gcc-14.2.0_AmazonLinux-2/lib64:/opt/arm/gcc-14.2.0_AmazonLinux-2/lib</pre>
+<pre style="margin: 0px">GCC_DIR=/opt/arm/gcc-14.2.0_AmazonLinux-2</pre>
+<pre style="margin: 0px">ARMPL_INCLUDES=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/include</pre>
+<pre style="margin: 0px">QTDIR=/usr/lib64/qt-3.3</pre>
+<pre style="margin: 0px">GCC_LIBRARIES=/opt/arm/gcc-14.2.0_AmazonLinux-2/lib:/opt/arm/gcc-14.2.0_AmazonLinux-2/lib64</pre>
+<pre style="margin: 0px">QTINC=/usr/lib64/qt-3.3/include</pre>
+<pre style="margin: 0px">ARMPL_DIR=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler</pre>
+<pre style="margin: 0px">SSH_TTY=/dev/pts/0</pre>
+<pre style="margin: 0px">USER=etud4-3</pre>
+<pre style="margin: 0px">LAPACK_SHARED=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/lib/libarmpl_lp64.so</pre>
+<pre style="margin: 0px">BLAS_SHARED=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/lib/libarmpl_lp64.so</pre>
+<pre style="margin: 0px">LD_LIBRARY_PATH=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/lib:/opt/arm/arm-linux-compiler-24.10.1_AmazonLinux-2/lib:/opt/arm/gcc-14.2.0_AmazonLinux-2/lib64:/opt/arm/gcc-14.2.0_AmazonLinux-2/lib:/opt/arm/arm-linux-compiler-24.10.1_AmazonLinux-2/lib/clang/19/armpl_links/lib</pre>
+<pre style="margin: 0px">LS_COLORS=rs=0:di=38;5;27:ln=38;5;51:mh=44;38;5;15:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=05;48;5;232;38;5;15:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;34:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.Z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.axv=38;5;13:*.anx=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.axa=38;5;45:*.oga=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:</pre>
+<pre style="margin: 0px">CPATH=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/include:/opt/arm/arm-linux-compiler-24.10.1_AmazonLinux-2/include:/opt/arm/gcc-14.2.0_AmazonLinux-2/include</pre>
+<pre style="margin: 0px">LAPACK_STATIC=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/lib/libarmpl_lp64.a</pre>
+<pre style="margin: 0px">BLAS_STATIC=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/lib/libarmpl_lp64.a</pre>
+<pre style="margin: 0px">ARMPL_BUILD=4</pre>
+<pre style="margin: 0px">PATH=/opt/arm/arm-linux-compiler-24.10.1_AmazonLinux-2/bin:/opt/arm/gcc-14.2.0_AmazonLinux-2/binutils_bin:/opt/amazon/openmpi/bin/:/opt/amazon/efa/bin/:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/bin:/opt/aws/bin:/opt/parallelcluster/pyenv/versions/3.9.20/envs/awsbatch_virtualenv/bin:/opt/slurm/bin:/fsx/home/etud4-3/.local/bin:/fsx/home/etud4-3/bin</pre>
+<pre style="margin: 0px">MAIL=/var/spool/mail/etud4-3</pre>
+<pre style="margin: 0px">LAPACK=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/lib/libarmpl_lp64.a</pre>
+<pre style="margin: 0px">BLAS=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/lib/libarmpl_lp64.a</pre>
+<pre style="margin: 0px">_=/usr/bin/env</pre>
+<pre style="margin: 0px">PWD=/fsx/home/etud4-3/Team_Exafloppeurs/scripts</pre>
+<pre style="margin: 0px">_LMFILES_=/opt/arm/modulefiles/binutils/14.2.0:/opt/arm/modulefiles/acfl/24.10.1:/opt/arm/modulefiles/acfl/../../moduledeps/acfl/24.10.1/armpl/24.10.1</pre>
+<pre style="margin: 0px">LANG=en_US.UTF-8</pre>
+<pre style="margin: 0px">MODULEPATH=/opt/arm/modulefiles/acfl/../../moduledeps/acfl/24.10.1:/opt/arm/modulefiles:/opt/amazon/modules/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles</pre>
+<pre style="margin: 0px">LOADEDMODULES=binutils/14.2.0:acfl/24.10.1:armpl/24.10.1</pre>
+<pre style="margin: 0px">ARM_LINUX_COMPILER_DIR=/opt/arm/arm-linux-compiler-24.10.1_AmazonLinux-2</pre>
+<pre style="margin: 0px">HISTCONTROL=ignoredups</pre>
+<pre style="margin: 0px">GCC_BUILD=408</pre>
+<pre style="margin: 0px">HOME=/fsx/home/etud4-3</pre>
+<pre style="margin: 0px">SHLVL=4</pre>
+<pre style="margin: 0px">LOGNAME=etud4-3</pre>
+<pre style="margin: 0px">QTLIB=/usr/lib64/qt-3.3/lib</pre>
+<pre style="margin: 0px">SSH_CONNECTION=194.199.64.71 10401 10.0.4.202 22</pre>
+<pre style="margin: 0px">XDG_DATA_DIRS=/fsx/home/etud4-3/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share</pre>
+<pre style="margin: 0px">MODULESHOME=/usr/share/Modules</pre>
+<pre style="margin: 0px">PKG_CONFIG_PATH=/opt/arm/armpl-24.10.1_AmazonLinux-2_arm-linux-compiler/lib/pkgconfig</pre>
+<pre style="margin: 0px">COMPILER_PATH=/opt/arm/gcc-14.2.0_AmazonLinux-2</pre>
+<pre style="margin: 0px">LESSOPEN=||/usr/bin/lesspipe.sh %s</pre>
+<pre style="margin: 0px">XDG_RUNTIME_DIR=/run/user/581001617</pre>
+<pre style="margin: 0px">GCC_INCLUDES=/opt/arm/gcc-14.2.0_AmazonLinux-2/include</pre>
+<pre style="margin: 0px">BASH_FUNC_module()=() {  eval `/usr/bin/modulecmd bash $*`</pre>
+<pre style="margin: 0px">}</pre>
+</div></div><div class="_accordion_box collapsed" ><h3 id="_accordion_header_2" class="_header collapsed" onclick="_click_accordion_header(this)" ><span class="_accordion_box_button">&#x25B6;</span>Path Number Loops Profile for node ip-10-0-4-202 - process 5080 - thread 5080</h3><div id="_accordion_content_2" class="_content collapsed"><div style="margin-top: 10px; margin-bottom: 10px; background-color: var(--chart_background); overflow-x:auto; overflow-y:hidden;"><div id="chart_cat_995" style="height:500px;margin-top:20px;" ></div></div>
+<script class="code" >
+  $(document).ready(function(){
+  var plot995_data = [[10,0,0,2,0,0,0,0,0,],[11.073376274202,0,0,13.870956283994,0,0,0,0,0,],[11.073376274202,11.073376274202,11.073376274202,24.944332558196,24.944332558196,24.944332558196,24.944332558196,24.944332558196,24.944332558196,],];
+  var plot995_ticks = ['1','2','3 to 4','5 to 8','9 to 16','17 to 32','33 to 64','> 64','unknown',];
+  var plot995 = jQuery.jqplot ('chart_cat_995', plot995_data, {
+    seriesDefaults: {
+      renderer: jQuery.jqplot.BarRenderer,
+      rendererOptions: {},
+      pointLabels: {show: true      },
+    },
+    axes: {
+      xaxis: {
+        renderer: $.jqplot.CategoryAxisRenderer,ticks: plot995_ticks,label: 'Coverage Range',labelRenderer: $.jqplot.CanvasAxisLabelRenderer,},
+      yaxis: {label: 'Number of Loops',labelRenderer: $.jqplot.CanvasAxisLabelRenderer,autoscale:true,min:0,},
+      y2axis: {label: 'Coverage (%)',labelRenderer: $.jqplot.CanvasAxisLabelRenderer,autoscale:true,min:0,}
+    },
+    highlighter: {tooltipContentEditor: function (str, seriesIndex, pointIndex) {return plot995_ticks[pointIndex]+' - '+plot995_data[seriesIndex][pointIndex];},show: true,showTooltip: true,sizeAdjust: 10,formatString: '%s',tooltipLocation: 'n',useAxesFormatters: false,},
+    legend: {renderer: $.jqplot.EnhancedLegendRenderer, show: true,location: 's',placement: 'outsideGrid',rendererOptions: {numberRows: '1',},},
+    series: [{label:'Number of Loops', yaxis:'yaxis', },{label:'Coverage over Range', yaxis:'y2axis', },{label:'Cumulated Coverage', renderer: $.jqplot.LineRenderer, yaxis:'y2axis', },],
+  });
+});
+</script></div></div><div class="_fixed_box" ><h3 class="_header">Profiling node ip-10-0-4-202 - process 5080 - thread 5080<span class="tooltip-maqao-button help-maqao" title="" tooltip_id="1" ></span></h3>
+<div class="_content"><div class="_div_table" ><div style="overflow:auto;">
+<table id="_tree_table_142" class="_tree_table"><tr><th class="_freezed_row  _left " style="width:60%;"><span></span>Name</th><th class="_freezed_row " style="width:20%;"><span></span>Module</th><th class="_freezed_row " style="width:10%;"><span></span>Coverage (%)</th><th class="_freezed_row " style="width:10%;"><span></span>Time (s)</th></tr>
+<tr class=" _outer_row"  id="_tr_142_1"  ondblclick="_action_4(this,1,-1, '../functions/BSM-MPI+BOOST_nocompil_37.html');"  style="cursor:pointer;"><td id="_tr_142_1-1"  data-_i="1" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span onclick="_click_tree(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span><span class="tooltip-maqao" title="" tooltip_id="2" >float boost::random::detail::unit_normal_distribution<float>::operator()<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random:...</span><span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_142_1-2"  data-_i="1" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_1-3"  data-_i="1" data-_j="3"  class=" _centered"  style="font-style: italic;" >17.89</td><td id="_tr_142_1-4"  data-_i="1" data-_j="4"  class=" _centered"  style="font-style: italic;" >176.49</td></tr>
+<tr class="_tree_hidden _tr_142_1"  id="_tr_142_1_1"  ondblclick="_action_4(this,2,-1, '../loops/BSM-MPI+BOOST_nocompil_3.html');"  style="cursor:pointer;"><td id="_tr_142_1_1-1"  data-_i="2" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 3 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_1_1-2"  data-_i="2" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_1_1-3"  data-_i="2" data-_j="3"  class=" _centered"  style="font-style: italic;" >13.86</td><td id="_tr_142_1_1-4"  data-_i="2" data-_j="4"  class=" _centered"  style="font-style: italic;" >136.68</td></tr>
+<tr class=" _outer_row"  id="_tr_142_2"  ondblclick="_action_4(this,3,-1, '../functions/BSM-MPI+BOOST_nocompil_48.html');"  style="cursor:pointer;"><td id="_tr_142_2-1"  data-_i="3" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>::operator()()</td><td id="_tr_142_2-2"  data-_i="3" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_2-3"  data-_i="3" data-_j="3"  class=" _centered"  style="font-style: italic;" >16.38</td><td id="_tr_142_2-4"  data-_i="3" data-_j="4"  class=" _centered"  style="font-style: italic;" >161.54</td></tr>
+<tr class=" _outer_row"  id="_tr_142_3"  ondblclick="_action_4(this,4,-1, '../functions/libm-2.26.so_258.html');"  style="cursor:pointer;"><td id="_tr_142_3-1"  data-_i="4" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>__exp_finite</td><td id="_tr_142_3-2"  data-_i="4" data-_j="2"  class=" _centered"  style="word-break:break-all;" >libm-2.26.so</td><td id="_tr_142_3-3"  data-_i="4" data-_j="3"  class=" _centered"  style="font-style: italic;" >11.94</td><td id="_tr_142_3-4"  data-_i="4" data-_j="4"  class=" _centered"  style="font-style: italic;" >117.78</td></tr>
+<tr class=" _outer_row"  id="_tr_142_4"  ondblclick="_action_4(this,5,-1, '../functions/libm-2.26.so_86.html');"  style="cursor:pointer;"><td id="_tr_142_4-1"  data-_i="5" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>__GI___exp</td><td id="_tr_142_4-2"  data-_i="5" data-_j="2"  class=" _centered"  style="word-break:break-all;" >libm-2.26.so</td><td id="_tr_142_4-3"  data-_i="5" data-_j="3"  class=" _centered"  style="font-style: italic;" >9.35</td><td id="_tr_142_4-4"  data-_i="5" data-_j="4"  class=" _centered"  style="font-style: italic;" >92.21</td></tr>
+<tr class=" _outer_row"  id="_tr_142_5"  ondblclick="_action_4(this,6,-1, '../functions/BSM-MPI+BOOST_nocompil_45.html');"  style="cursor:pointer;"><td id="_tr_142_5-1"  data-_i="6" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span onclick="_click_tree(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span><span class="tooltip-maqao" title="" tooltip_id="3" >std::pair<float, int> boost::random::detail::generate_int_float_pair<float, 8ul, boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost:...</span><span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_142_5-2"  data-_i="6" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_5-3"  data-_i="6" data-_j="3"  class=" _centered"  style="font-style: italic;" >8.70</td><td id="_tr_142_5-4"  data-_i="6" data-_j="4"  class=" _centered"  style="font-style: italic;" >85.82</td></tr>
+<tr class="_tree_hidden _tr_142_5"  id="_tr_142_5_1"  ondblclick="_action_4(this,7,-1, '../loops/BSM-MPI+BOOST_nocompil_7.html');"  style="cursor:pointer;"><td id="_tr_142_5_1-1"  data-_i="7" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 7 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_5_1-2"  data-_i="7" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_5_1-3"  data-_i="7" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.40</td><td id="_tr_142_5_1-4"  data-_i="7" data-_j="4"  class=" _centered"  style="font-style: italic;" >3.97</td></tr>
+<tr class="_tree_hidden _tr_142_5"  id="_tr_142_5_2"  ondblclick="_action_4(this,8,-1, '../loops/BSM-MPI+BOOST_nocompil_8.html');"  style="cursor:pointer;"><td id="_tr_142_5_2-1"  data-_i="8" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 8 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_5_2-2"  data-_i="8" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_5_2-3"  data-_i="8" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.37</td><td id="_tr_142_5_2-4"  data-_i="8" data-_j="4"  class=" _centered"  style="font-style: italic;" >3.61</td></tr>
+<tr class=" _outer_row"  id="_tr_142_6"  ondblclick="_action_4(this,9,-1, '../functions/BSM-MPI+BOOST_nocompil_34.html');"  style="cursor:pointer;"><td id="_tr_142_6-1"  data-_i="9" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>float const& std::max<float>(float const&, float const&)</td><td id="_tr_142_6-2"  data-_i="9" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_6-3"  data-_i="9" data-_j="3"  class=" _centered"  style="font-style: italic;" >6.71</td><td id="_tr_142_6-4"  data-_i="9" data-_j="4"  class=" _centered"  style="font-style: italic;" >66.16</td></tr>
+<tr class=" _outer_row"  id="_tr_142_7"  ondblclick="_action_4(this,10,-1, '../functions/BSM-MPI+BOOST_nocompil_9.html');"  style="cursor:pointer;"><td id="_tr_142_7-1"  data-_i="10" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span onclick="_click_tree(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span>black_scholes_monte_carlo(unsigned long, unsigned long, float, float, float, float, unsigned long)<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_142_7-2"  data-_i="10" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_7-3"  data-_i="10" data-_j="3"  class=" _centered"  style="font-style: italic;" >6.20</td><td id="_tr_142_7-4"  data-_i="10" data-_j="4"  class=" _centered"  style="font-style: italic;" >61.14</td></tr>
+<tr class="_tree_hidden _tr_142_7"  id="_tr_142_7_1"  ondblclick="_action_4(this,11,-1, '../loops/BSM-MPI+BOOST_nocompil_0.html');"  style="cursor:pointer;"><td id="_tr_142_7_1-1"  data-_i="11" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 0 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_7_1-2"  data-_i="11" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_7_1-3"  data-_i="11" data-_j="3"  class=" _centered"  style="font-style: italic;" >6.20</td><td id="_tr_142_7_1-4"  data-_i="11" data-_j="4"  class=" _centered"  style="font-style: italic;" >61.14</td></tr>
+<tr class=" _outer_row"  id="_tr_142_8"  ondblclick="_action_4(this,12,-1, '../functions/BSM-MPI+BOOST_nocompil_51.html');"  style="cursor:pointer;"><td id="_tr_142_8-1"  data-_i="12" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span onclick="_click_tree(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span><span class="tooltip-maqao" title="" tooltip_id="4" >boost::make_unsigned<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>::result_type>::type boost::random::detail::generate_one_digit<boost:...</span><span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_142_8-2"  data-_i="12" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_8-3"  data-_i="12" data-_j="3"  class=" _centered"  style="font-style: italic;" >5.00</td><td id="_tr_142_8-4"  data-_i="12" data-_j="4"  class=" _centered"  style="font-style: italic;" >49.35</td></tr>
+<tr class="_tree_hidden _tr_142_8"  id="_tr_142_8_1"  ondblclick="_action_4(this,13,-1, '../loops/BSM-MPI+BOOST_nocompil_9.html');"  style="cursor:pointer;"><td id="_tr_142_8_1-1"  data-_i="13" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 9 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_8_1-2"  data-_i="13" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_8_1-3"  data-_i="13" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.69</td><td id="_tr_142_8_1-4"  data-_i="13" data-_j="4"  class=" _centered"  style="font-style: italic;" >6.79</td></tr>
+<tr class=" _outer_row"  id="_tr_142_9"  ondblclick="_action_4(this,14,-1, '../functions/BSM-MPI+BOOST_nocompil_49.html');"  style="cursor:pointer;"><td id="_tr_142_9-1"  data-_i="14" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>boost::random::detail::subtract<unsigned int, false>::operator()(unsigned int, unsigned int)</td><td id="_tr_142_9-2"  data-_i="14" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_9-3"  data-_i="14" data-_j="3"  class=" _centered"  style="font-style: italic;" >4.20</td><td id="_tr_142_9-4"  data-_i="14" data-_j="4"  class=" _centered"  style="font-style: italic;" >41.45</td></tr>
+<tr class=" _outer_row"  id="_tr_142_10"  ondblclick="_action_4(this,15,-1, '../functions/BSM-MPI+BOOST_nocompil_54.html');"  style="cursor:pointer;"><td id="_tr_142_10-1"  data-_i="15" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span onclick="_click_tree(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span>boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>::twist()<span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_142_10-2"  data-_i="15" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_10-3"  data-_i="15" data-_j="3"  class=" _centered"  style="font-style: italic;" >3.23</td><td id="_tr_142_10-4"  data-_i="15" data-_j="4"  class=" _centered"  style="font-style: italic;" >31.90</td></tr>
+<tr class="_tree_hidden _tr_142_10"  id="_tr_142_10_1"  ondblclick="_action_4(this,16,-1, '../loops/BSM-MPI+BOOST_nocompil_12.html');"  style="cursor:pointer;"><td id="_tr_142_10_1-1"  data-_i="16" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 12 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_10_1-2"  data-_i="16" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_10_1-3"  data-_i="16" data-_j="3"  class=" _centered"  style="font-style: italic;" >2.04</td><td id="_tr_142_10_1-4"  data-_i="16" data-_j="4"  class=" _centered"  style="font-style: italic;" >20.09</td></tr>
+<tr class="_tree_hidden _tr_142_10"  id="_tr_142_10_2"  ondblclick="_action_4(this,17,-1, '../loops/BSM-MPI+BOOST_nocompil_14.html');"  style="cursor:pointer;"><td id="_tr_142_10_2-1"  data-_i="17" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 14 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_10_2-2"  data-_i="17" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_10_2-3"  data-_i="17" data-_j="3"  class=" _centered"  style="font-style: italic;" >1.14</td><td id="_tr_142_10_2-4"  data-_i="17" data-_j="4"  class=" _centered"  style="font-style: italic;" >11.29</td></tr>
+<tr class="_tree_hidden _tr_142_10"  id="_tr_142_10_3"  ondblclick="_action_4(this,18,-1, '../loops/BSM-MPI+BOOST_nocompil_13.html');"  style="cursor:pointer;"><td id="_tr_142_10_3-1"  data-_i="18" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 13 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_10_3-2"  data-_i="18" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_10_3-3"  data-_i="18" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.04</td><td id="_tr_142_10_3-4"  data-_i="18" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.39</td></tr>
+<tr class="_tree_hidden _tr_142_10"  id="_tr_142_10_4"  ondblclick="_action_4(this,19,-1, '../loops/BSM-MPI+BOOST_nocompil_11.html');"  style="cursor:pointer;"><td id="_tr_142_10_4-1"  data-_i="19" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 11 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_10_4-2"  data-_i="19" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_10_4-3"  data-_i="19" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.01</td><td id="_tr_142_10_4-4"  data-_i="19" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.06</td></tr>
+<tr class=" _outer_row"  id="_tr_142_11"  ondblclick="_action_4(this,20,-1, '../functions/BSM-MPI+BOOST_nocompil_52.html');"  style="cursor:pointer;"><td id="_tr_142_11-1"  data-_i="20" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>std::pair<std::__decay_and_strip<float&>::__type, std::__decay_and_strip<int&>::__type> std::make_pair<float&, int&>(float&, int&)</td><td id="_tr_142_11-2"  data-_i="20" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_11-3"  data-_i="20" data-_j="3"  class=" _centered"  style="font-style: italic;" >2.58</td><td id="_tr_142_11-4"  data-_i="20" data-_j="4"  class=" _centered"  style="font-style: italic;" >25.42</td></tr>
+<tr class=" _outer_row"  id="_tr_142_12"  ondblclick="_action_4(this,21,-1, '../functions/BSM-MPI+BOOST_nocompil_58.html');"  style="cursor:pointer;"><td id="_tr_142_12-1"  data-_i="21" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>std::pair<float, int>::pair<float&, int&, true>(float&, int&)</td><td id="_tr_142_12-2"  data-_i="21" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_12-3"  data-_i="21" data-_j="3"  class=" _centered"  style="font-style: italic;" >1.70</td><td id="_tr_142_12-4"  data-_i="21" data-_j="4"  class=" _centered"  style="font-style: italic;" >16.82</td></tr>
+<tr class=" _outer_row"  id="_tr_142_13"  ondblclick="_action_4(this,22,-1, '../functions/BSM-MPI+BOOST_nocompil_8.html');"  style="cursor:pointer;"><td id="_tr_142_13-1"  data-_i="22" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>gaussian_box_muller()</td><td id="_tr_142_13-2"  data-_i="22" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_13-3"  data-_i="22" data-_j="3"  class=" _centered"  style="font-style: italic;" >1.42</td><td id="_tr_142_13-4"  data-_i="22" data-_j="4"  class=" _centered"  style="font-style: italic;" >14.02</td></tr>
+<tr class=" _outer_row"  id="_tr_142_14"  ondblclick="_action_4(this,23,-1, '../functions/BSM-MPI+BOOST_nocompil_39.html');"  style="cursor:pointer;"><td id="_tr_142_14-1"  data-_i="23" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span><span class="tooltip-maqao" title="" tooltip_id="5" >std::pair<float, int> boost::random::detail::generate_int_float_pair<float, 8ul, boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost:...</span></td><td id="_tr_142_14-2"  data-_i="23" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_14-3"  data-_i="23" data-_j="3"  class=" _centered"  style="font-style: italic;" >1.06</td><td id="_tr_142_14-4"  data-_i="23" data-_j="4"  class=" _centered"  style="font-style: italic;" >10.42</td></tr>
+<tr class=" _outer_row"  id="_tr_142_15"  ondblclick="_action_4(this,24,-1, '../functions/BSM-MPI+BOOST_nocompil_56.html');"  style="cursor:pointer;"><td id="_tr_142_15-1"  data-_i="24" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>float& std::forward<float&>(std::remove_reference<float&>::type&)</td><td id="_tr_142_15-2"  data-_i="24" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_15-3"  data-_i="24" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.94</td><td id="_tr_142_15-4"  data-_i="24" data-_j="4"  class=" _centered"  style="font-style: italic;" >9.32</td></tr>
+<tr class=" _outer_row"  id="_tr_142_16"  ondblclick="_action_4(this,25,-1, '../functions/BSM-MPI+BOOST_nocompil_33.html');"  style="cursor:pointer;"><td id="_tr_142_16-1"  data-_i="25" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span><span class="tooltip-maqao" title="" tooltip_id="6" >float boost::random::normal_distribution<float>::operator()<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_twi...</span></td><td id="_tr_142_16-2"  data-_i="25" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_16-3"  data-_i="25" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.85</td><td id="_tr_142_16-4"  data-_i="25" data-_j="4"  class=" _centered"  style="font-style: italic;" >8.34</td></tr>
+<tr class=" _outer_row"  id="_tr_142_17"  ondblclick="_action_4(this,26,-1, '../functions/BSM-MPI+BOOST_nocompil_57.html');"  style="cursor:pointer;"><td id="_tr_142_17-1"  data-_i="26" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>int& std::forward<int&>(std::remove_reference<int&>::type&)</td><td id="_tr_142_17-2"  data-_i="26" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_17-3"  data-_i="26" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.54</td><td id="_tr_142_17-4"  data-_i="26" data-_j="4"  class=" _centered"  style="font-style: italic;" >5.37</td></tr>
+<tr class=" _outer_row"  id="_tr_142_18"  ondblclick="_action_3(this,27,-1, 'unknown_function - BSM-MPI+BOOST_nocompil');"  style="cursor:pointer;"><td id="_tr_142_18-1"  data-_i="27" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>unknown_function</td><td id="_tr_142_18-2"  data-_i="27" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_18-3"  data-_i="27" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.28</td><td id="_tr_142_18-4"  data-_i="27" data-_j="4"  class=" _centered"  style="font-style: italic;" >2.73</td></tr>
+<tr class=" _outer_row"  id="_tr_142_19"  ondblclick="_action_4(this,28,-1, '../functions/BSM-MPI+BOOST_nocompil_43.html');"  style="cursor:pointer;"><td id="_tr_142_19-1"  data-_i="28" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span onclick="_click_tree(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span><span class="tooltip-maqao" title="" tooltip_id="7" >float boost::random::detail::new_uniform_01<float>::operator()<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_...</span><span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_142_19-2"  data-_i="28" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_19-3"  data-_i="28" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.27</td><td id="_tr_142_19-4"  data-_i="28" data-_j="4"  class=" _centered"  style="font-style: italic;" >2.69</td></tr>
+<tr class="_tree_hidden _tr_142_19"  id="_tr_142_19_1"  ondblclick="_action_4(this,29,-1, '../loops/BSM-MPI+BOOST_nocompil_6.html');"  style="cursor:pointer;"><td id="_tr_142_19_1-1"  data-_i="29" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 6 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_19_1-2"  data-_i="29" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_19_1-3"  data-_i="29" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.19</td><td id="_tr_142_19_1-4"  data-_i="29" data-_j="4"  class=" _centered"  style="font-style: italic;" >1.84</td></tr>
+<tr class=" _outer_row"  id="_tr_142_20"  ondblclick="_action_4(this,30,-1, '../functions/libm-2.26.so_82.html');"  style="cursor:pointer;"><td id="_tr_142_20-1"  data-_i="30" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>__sqrt</td><td id="_tr_142_20-2"  data-_i="30" data-_j="2"  class=" _centered"  style="word-break:break-all;" >libm-2.26.so</td><td id="_tr_142_20-3"  data-_i="30" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.23</td><td id="_tr_142_20-4"  data-_i="30" data-_j="4"  class=" _centered"  style="font-style: italic;" >2.28</td></tr>
+<tr class=" _outer_row"  id="_tr_142_21"  ondblclick="_action_4(this,31,-1, '../functions/BSM-MPI+BOOST_nocompil_42.html');"  style="cursor:pointer;"><td id="_tr_142_21-1"  data-_i="31" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>::min()</td><td id="_tr_142_21-2"  data-_i="31" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_21-3"  data-_i="31" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.15</td><td id="_tr_142_21-4"  data-_i="31" data-_j="4"  class=" _centered"  style="font-style: italic;" >1.47</td></tr>
+<tr class=" _outer_row"  id="_tr_142_22"  ondblclick="_action_4(this,32,-1, '../functions/BSM-MPI+BOOST_nocompil_35.html');"  style="cursor:pointer;"><td id="_tr_142_22-1"  data-_i="32" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>::max()</td><td id="_tr_142_22-2"  data-_i="32" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_22-3"  data-_i="32" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.15</td><td id="_tr_142_22-4"  data-_i="32" data-_j="4"  class=" _centered"  style="font-style: italic;" >1.45</td></tr>
+<tr class=" _outer_row"  id="_tr_142_23"  ondblclick="_action_4(this,33,-1, '../functions/BSM-MPI+BOOST_nocompil_22.html');"  style="cursor:pointer;"><td id="_tr_142_23-1"  data-_i="33" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>std::numeric_limits<unsigned int>::max()</td><td id="_tr_142_23-2"  data-_i="33" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_23-3"  data-_i="33" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.10</td><td id="_tr_142_23-4"  data-_i="33" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.99</td></tr>
+<tr class=" _outer_row"  id="_tr_142_24"  ondblclick="_action_4(this,34,-1, '../functions/libm-2.26.so_394.html');"  style="cursor:pointer;"><td id="_tr_142_24-1"  data-_i="34" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>__expf_finite</td><td id="_tr_142_24-2"  data-_i="34" data-_j="2"  class=" _centered"  style="word-break:break-all;" >libm-2.26.so</td><td id="_tr_142_24-3"  data-_i="34" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.03</td><td id="_tr_142_24-4"  data-_i="34" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.34</td></tr>
+<tr class=" _outer_row"  id="_tr_142_25"  ondblclick="_action_4(this,35,-1, '../functions/BSM-MPI+BOOST_nocompil_53.html');"  style="cursor:pointer;"><td id="_tr_142_25-1"  data-_i="35" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span onclick="_click_tree(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span><span class="tooltip-maqao" title="" tooltip_id="8" >float boost::random::detail::unit_exponential_distribution<float>::operator()<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::ra...</span><span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_142_25-2"  data-_i="35" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_25-3"  data-_i="35" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.02</td><td id="_tr_142_25-4"  data-_i="35" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.16</td></tr>
+<tr class="_tree_hidden _tr_142_25"  id="_tr_142_25_1"  ondblclick="_action_4(this,36,-1, '../loops/BSM-MPI+BOOST_nocompil_10.html');"  style="cursor:pointer;"><td id="_tr_142_25_1-1"  data-_i="36" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 10 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_25_1-2"  data-_i="36" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_25_1-3"  data-_i="36" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.01</td><td id="_tr_142_25_1-4"  data-_i="36" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.14</td></tr>
+<tr class=" _outer_row"  id="_tr_142_26"  ondblclick="_action_4(this,37,-1, '../functions/BSM-MPI+BOOST_nocompil_21.html');"  style="cursor:pointer;"><td id="_tr_142_26-1"  data-_i="37" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>std::exp(float)</td><td id="_tr_142_26-2"  data-_i="37" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_26-3"  data-_i="37" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.02</td><td id="_tr_142_26-4"  data-_i="37" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.16</td></tr>
+<tr class=" _outer_row"  id="_tr_142_27"  ondblclick="_action_4(this,38,-1, '../functions/libm-2.26.so_117.html');"  style="cursor:pointer;"><td id="_tr_142_27-1"  data-_i="38" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>__GI___expf</td><td id="_tr_142_27-2"  data-_i="38" data-_j="2"  class=" _centered"  style="word-break:break-all;" >libm-2.26.so</td><td id="_tr_142_27-3"  data-_i="38" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.01</td><td id="_tr_142_27-4"  data-_i="38" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.11</td></tr>
+<tr class=" _outer_row"  id="_tr_142_28"  ondblclick="_action_4(this,39,-1, '../functions/BSM-MPI+BOOST_nocompil_46.html');"  style="cursor:pointer;"><td id="_tr_142_28-1"  data-_i="39" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>boost::random::exponential_distribution<float>::exponential_distribution(float)</td><td id="_tr_142_28-2"  data-_i="39" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_28-3"  data-_i="39" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.01</td><td id="_tr_142_28-4"  data-_i="39" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.11</td></tr>
+<tr class=" _outer_row"  id="_tr_142_29"  ondblclick="_action_4(this,40,-1, '../functions/BSM-MPI+BOOST_nocompil_40.html');"  style="cursor:pointer;"><td id="_tr_142_29-1"  data-_i="40" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span onclick="_click_tree(this)" style="margin-right:5px;margin-left:0px;cursor:pointer;" >&#x25BA;</span><span class="tooltip-maqao" title="" tooltip_id="9" >float boost::random::detail::unit_normal_distribution<float>::generate_tail<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::rand...</span><span onclick="_click_expand(this)" class="span_expand">&#43;</span></td><td id="_tr_142_29-2"  data-_i="40" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_29-3"  data-_i="40" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.01</td><td id="_tr_142_29-4"  data-_i="40" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.11</td></tr>
+<tr class="_tree_hidden _tr_142_29"  id="_tr_142_29_1"  ondblclick="_action_4(this,41,-1, '../loops/BSM-MPI+BOOST_nocompil_5.html');"  style="cursor:pointer;"><td id="_tr_142_29_1-1"  data-_i="41" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:18px;" >&#x25CB;</span>Loop 5 -  - BSM-MPI+BOOST_nocompil</td><td id="_tr_142_29_1-2"  data-_i="41" data-_j="2"  class=" _centered"  style="word-break:break-all;" ></td><td id="_tr_142_29_1-3"  data-_i="41" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.00</td><td id="_tr_142_29_1-4"  data-_i="41" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.04</td></tr>
+<tr class=" _outer_row"  id="_tr_142_30"  ondblclick="_action_4(this,42,-1, '../functions/BSM-MPI+BOOST_nocompil_41.html');"  style="cursor:pointer;"><td id="_tr_142_30-1"  data-_i="42" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>boost::random::uniform_01<float, double>::uniform_01()</td><td id="_tr_142_30-2"  data-_i="42" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_30-3"  data-_i="42" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.01</td><td id="_tr_142_30-4"  data-_i="42" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.10</td></tr>
+<tr class=" _outer_row"  id="_tr_142_31"  ondblclick="_action_4(this,43,-1, '../functions/BSM-MPI+BOOST_nocompil_44.html');"  style="cursor:pointer;"><td id="_tr_142_31-1"  data-_i="43" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>boost::random::detail::unit_normal_distribution<float>::f(float)</td><td id="_tr_142_31-2"  data-_i="43" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_31-3"  data-_i="43" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.01</td><td id="_tr_142_31-4"  data-_i="43" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.08</td></tr>
+<tr class=" _outer_row"  id="_tr_142_32"  ondblclick="_action_4(this,44,-1, '../functions/libmpi.so.40.30.6_474.html');"  style="cursor:pointer;"><td id="_tr_142_32-1"  data-_i="44" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>MPI_Comm_size</td><td id="_tr_142_32-2"  data-_i="44" data-_j="2"  class=" _centered"  style="word-break:break-all;" >libmpi.so.40.30.6</td><td id="_tr_142_32-3"  data-_i="44" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.00</td><td id="_tr_142_32-4"  data-_i="44" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.01</td></tr>
+<tr class=" _outer_row"  id="_tr_142_33"  ondblclick="_action_4(this,45,-1, '../functions/BSM-MPI+BOOST_nocompil_47.html');"  style="cursor:pointer;"><td id="_tr_142_33-1"  data-_i="45" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span><span class="tooltip-maqao" title="" tooltip_id="10" >float boost::random::exponential_distribution<float>::operator()<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenn...</span></td><td id="_tr_142_33-2"  data-_i="45" data-_j="2"  class=" _centered"  style="word-break:break-all;" >BSM-MPI+BOOST_nocompil</td><td id="_tr_142_33-3"  data-_i="45" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.00</td><td id="_tr_142_33-4"  data-_i="45" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.01</td></tr>
+<tr class=" _outer_row"  id="_tr_142_34"  ondblclick="_action_4(this,46,-1, '../functions/libmpi.so.40.30.6_651.html');"  style="cursor:pointer;"><td id="_tr_142_34-1"  data-_i="46" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>MPI_Reduce</td><td id="_tr_142_34-2"  data-_i="46" data-_j="2"  class=" _centered"  style="word-break:break-all;" >libmpi.so.40.30.6</td><td id="_tr_142_34-3"  data-_i="46" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.00</td><td id="_tr_142_34-4"  data-_i="46" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.00</td></tr>
+<tr class=" _outer_row"  id="_tr_142_35"  ondblclick="_action_4(this,47,-1, '../functions/libopen-pal.so.40.30.3_482.html');"  style="cursor:pointer;"><td id="_tr_142_35-1"  data-_i="47" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>non_overlap_copy_content_same_ddt</td><td id="_tr_142_35-2"  data-_i="47" data-_j="2"  class=" _centered"  style="word-break:break-all;" >libopen-pal.so.40.30.3</td><td id="_tr_142_35-3"  data-_i="47" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.00</td><td id="_tr_142_35-4"  data-_i="47" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.00</td></tr>
+<tr class=" _outer_row"  id="_tr_142_36"  ondblclick="_action_4(this,48,-1, '../functions/ld-2.26.so_27.html');"  style="cursor:pointer;"><td id="_tr_142_36-1"  data-_i="48" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>_dl_map_object_from_fd</td><td id="_tr_142_36-2"  data-_i="48" data-_j="2"  class=" _centered"  style="word-break:break-all;" >ld-2.26.so</td><td id="_tr_142_36-3"  data-_i="48" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.00</td><td id="_tr_142_36-4"  data-_i="48" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.00</td></tr>
+<tr class=" _outer_row"  id="_tr_142_37"  ondblclick="_action_4(this,49,-1, '../functions/mca_coll_self.so_22.html');"  style="cursor:pointer;"><td id="_tr_142_37-1"  data-_i="49" data-_j="1"  class=" _left"  style="word-break:break-all;" ><span style="margin-right:10px;margin-left:3px;" >&#x25CB;</span>mca_coll_self_reduce_intra</td><td id="_tr_142_37-2"  data-_i="49" data-_j="2"  class=" _centered"  style="word-break:break-all;" >mca_coll_self.so</td><td id="_tr_142_37-3"  data-_i="49" data-_j="3"  class=" _centered"  style="font-style: italic;" >0.00</td><td id="_tr_142_37-4"  data-_i="49" data-_j="4"  class=" _centered"  style="font-style: italic;" >0.00</td></tr>
+</table></div>
+</div>
+<script>
+function _action_3 (obj, i, j, p){open("../functions/empty_function.html?fct="+p+"");}
+function _action_4 (obj, i, j, p){open(""+p+"");}
+</script>
+<script>
+function getPos(el) {
+  for (var lx=0, ly=0;
+      el != null;
+      lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent);
+  return {x: lx,y: ly};
+}
+function _onresize () {
+  __maqao_legacy_onresize ();
+  var d = document.getElementById ("_tree_table_142").parentNode;
+  d.style.maxHeight = (window.innerHeight - getPos (d).y - 20)+"px";
+}
+window.onresize = _onresize;
+addLoadEvent(function(){
+  _onresize ();
+});
+</script>
+
+  <div id="MaqaoModal" class="maqao_modal">
+    <div class="maqao_modal-content">
+      <div class="maqao_modal-header">
+        <span class="maqao_close">&times;</span>
+      </div>
+      <div id="maqao_modal-body" class="maqao_modal-body">
+      </div>
+    </div>
+  </div>
+</div><script>
+var tooltips_texts = ['Environment variables defined for for the thread.<br/>A value is colored in <span style="background:#e5ccb3; width:20px;">orange</span> when it changes<br/>across threads in a single run.',
+'Coverage and Time are inclusive metrics.',
+'float boost::random::detail::unit_normal_distribution<float>::operator()<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>&)',
+'std::pair<float, int> boost::random::detail::generate_int_float_pair<float, 8ul, boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>&, boost::integral_constant<bool, true>)',
+'boost::make_unsigned<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>::result_type>::type boost::random::detail::generate_one_digit<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>&, unsigned long)',
+'std::pair<float, int> boost::random::detail::generate_int_float_pair<float, 8ul, boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>&)',
+'float boost::random::normal_distribution<float>::operator()<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>&)',
+'float boost::random::detail::new_uniform_01<float>::operator()<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>&)',
+'float boost::random::detail::unit_exponential_distribution<float>::operator()<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>&)',
+'float boost::random::detail::unit_normal_distribution<float>::generate_tail<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>&)',
+'float boost::random::exponential_distribution<float>::operator()<boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u> >(boost::random::mersenne_twister_engine<unsigned int, 32ul, 624ul, 397ul, 31ul, 2567483615u, 11ul, 4294967295u, 7ul, 2636928640u, 15ul, 4022730752u, 18ul, 1812433253u>&) const'];
+var modal = document.getElementById('MaqaoModal');
+var span = document.getElementsByClassName("maqao_close")[0];
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+const comparer = (idx, asc) => (a, b) => ((v1, v2) => 
+    v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v2 - v1 : v1.toString().localeCompare(v2)
+    )(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+addLoadEvent(function(){
+  document.querySelectorAll('._fixed_table:not(._no_auto_sorting) th').forEach(th => th.addEventListener('click', (() => {
+    const table = th.closest('table');
+    // Remove all symbols in header
+    table.querySelectorAll('th').forEach(function (e) {
+      e.firstChild.textContent = "";
+    });
+    // Change the symbol on the clicked header
+    if (this.asc != true) {
+      th.firstChild.textContent = "\u25BC";
+    }
+    else {
+      th.firstChild.textContent = "\u25B2";
+    }
+    Array.from(table.querySelectorAll('tr:nth-child(n+2)'))
+        .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+        .forEach(tr => table.appendChild(tr) );
+  })));
+});
+addLoadEvent(function(){
+  document.querySelectorAll('._tree_table:not(._no_auto_sorting) th').forEach(th => th.addEventListener('click', (() => {
+    const table = th.closest('table');
+    // Remove all symbols in header
+    table.querySelectorAll('th').forEach(function (e) {
+      e.firstChild.textContent = "";
+    });
+    // Change the symbol on the clicked header
+    if (this.asc != true) {
+      th.firstChild.textContent = "\u25BC";
+    }
+    else {
+      th.firstChild.textContent = "\u25B2";
+    }
+    let last_id = "";
+    const t_outermost = new Array ();
+    const t_children  = new Map ();
+    for (let i = 1, row; row = table.rows[i]; i++) {
+      if (row.classList.contains ("_outer_row")) {
+        t_outermost.push (row);
+        last_id = row.id;
+        t_children [last_id] = new Array ();
+      }
+      else {
+        t_children [last_id].push (row);
+      }
+    }
+    t_outermost.sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc));
+    for (let i = 0, row; row = t_outermost[i]; i++) {
+      table.appendChild(row)
+      for (let j = 0, child; child = t_children[row.id][j]; j++) {
+        table.appendChild(child)
+      }
+    }
+  })));
+});
+function _check_all_checkbox_ (obj_id, opts_ids) {
+  var obj   = document.getElementById (obj_id);
+  var opts  = window[opts_ids];
+  var count = 0
+  for (i = 0; i < opts.length; i++) {
+    var obj_s = document.getElementById(opts[i]);
+    if (obj_s.checked) {
+      count ++;
+    }
+  }
+  if (count == 0) {
+    obj.value = "Select all";
+  }
+  else if (count == opts.length) {
+    obj.value = "Select none";
+  }
+}
+// Fonction for table selector
+function click_table_menu (c, obj_id, opt_ids) {
+  var is_checked = document.getElementById (c).checked;
+  localStorage.setItem(c, is_checked);
+  $("."+c).each(function(index, element) {
+    if (is_checked) {
+      element.classList.remove("_tcol_hidden");
+    }
+    else {
+      element.classList.add("_tcol_hidden");
+    }
+  });
+  if (obj_id != undefined) {
+    _check_all_checkbox_ (obj_id, opt_ids)
+  }
+}
+function set_all_table_menu (obj, var_opt_ids) {
+  var opt_ids = window[var_opt_ids];
+  var is_selected = true
+  if (obj.value == "Select all") {
+    is_selected = false;
+  }
+  for (i = 0; i < opt_ids.length; i++) {
+    var obj_s = document.getElementById(opt_ids[i]);
+    if (is_selected == obj_s.checked) {
+      obj_s.checked = !obj_s.checked;
+      click_table_menu (opt_ids[i]);
+    }
+  }
+  if (is_selected == false) {
+    obj.value = "Select none";
+  } else {
+    obj.value = "Select all";
+  }
+  localStorage.setItem(obj.id, obj.value);
+}
+// Script for accordion box
+function _click_accordion_header(obj) {
+  var content = obj.nextSibling;
+  content.classList.toggle('collapsed');
+  obj.classList.toggle('collapsed');
+  obj.parentNode.classList.toggle('collapsed');
+  // Check if the box must be openned ...
+  if (obj.classList.contains ('collapsed'))
+  {
+    obj.firstChild.textContent = "\u25B6";
+  }
+  // or closed.
+  else 
+  {
+    obj.firstChild.textContent = "\u25BC";
+  }
+  if (typeof _onresize === "function") {
+    _onresize ();
+  }
+}
+  // Script for paged table
+function _click_paged_prev(obj) {
+  var pages_content_id = '_paged_tables_page_' + obj.parentNode.parentNode.id.substr (obj.parentNode.parentNode.id.lastIndexOf('_') + 1);
+  var pages_content = document.getElementById(pages_content_id).innerHTML;
+  var max_pages = pages_content.substr (pages_content.lastIndexOf('/') + 1);
+  var cur_page  = pages_content.substring (pages_content.lastIndexOf(' ') + 1, pages_content.lastIndexOf('/'));
+  max_pages = Number (max_pages);
+  cur_page  = Number (cur_page);
+  if (cur_page > 1) {
+    var div_paged = obj.parentNode.parentNode.id;
+    var i;
+    var x = document.getElementsByClassName(div_paged + '_' + (cur_page - 1));
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.toggle('_paged_hidden');
+    }
+    x = document.getElementsByClassName(div_paged + '_' + (cur_page - 2));
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.toggle('_paged_hidden');
+    }
+  document.getElementById(pages_content_id).textContent = "Page " + (cur_page - 1) + "/" + max_pages;
+  }
+}
+function _click_paged_next(obj) {
+  var pages_content_id = '_paged_tables_page_' + obj.parentNode.parentNode.id.substr (obj.parentNode.parentNode.id.lastIndexOf('_') + 1);
+  var pages_content = document.getElementById(pages_content_id).innerHTML;
+  var max_pages = pages_content.substr (pages_content.lastIndexOf('/') + 1);
+  var cur_page  = pages_content.substring (pages_content.lastIndexOf(' ') + 1, pages_content.lastIndexOf('/'));
+  max_pages = Number (max_pages);
+  cur_page  = Number (cur_page);
+  if (cur_page < max_pages) {
+    var div_paged = obj.parentNode.parentNode.id;
+    var i;
+    var x = document.getElementsByClassName(div_paged + '_' + (cur_page - 1));
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.toggle('_paged_hidden');
+    }
+    x = document.getElementsByClassName(div_paged + '_' + cur_page);
+    for (i = 0; i < x.length; i++) {
+      x[i].classList.toggle('_paged_hidden');
+    }
+    document.getElementById(pages_content_id).textContent = "Page " + (cur_page + 1) + "/" + max_pages;
+  }
+}
+// Function for tree table
+function _click_tree(obj) {
+  if (obj.innerHTML == "\u25BA") {
+    obj.textContent = "\u25BC";
+    // Open childs
+    var x = document.getElementsByClassName(obj.parentNode.parentNode.id);
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.toggle('_tree_hidden');
+    }
+  }
+  else if (obj.innerHTML == "\u25BC") {
+    obj.textContent = "\u25BA";
+    // Close all childs
+    var trs = document.getElementsByTagName('tr');
+    var r   = obj.parentNode.parentNode.id+'_';
+    var re  = new RegExp (r, "g");
+    for (var i = 0; i < trs.length; i++) {
+      var s = trs[i].id+""
+      if (s.match(re)) {
+        var o = document.getElementById(s);
+        if (! o.classList.contains('_tree_hidden')) {
+          o.classList.toggle('_tree_hidden');
+        }
+        if (o.firstChild.firstChild.textContent == "\u25BC") {
+          o.firstChild.firstChild.textContent = "\u25BA";
+        }
+        if (o.firstChild.childNodes.length == 3) {
+          o.firstChild.childNodes[2].textContent = '+';
+        }
+      }
+    }
+    if (obj.parentNode.childNodes.length == 3) {
+      obj.parentNode.childNodes[2].textContent = '+';
+    }
+  }
+}
+function _click_expand (obj) {
+  var trs = document.getElementsByTagName('tr');
+  var r   = obj.parentNode.parentNode.id+'_';
+  var re  = new RegExp (r, "g");
+  // Symbole + => expand all
+  if (obj.textContent == "+") {
+    for (var i = 0; i < trs.length; i++) {
+      var s = trs[i].id+"";
+      if (s.match(re)) {
+        var o = document.getElementById(s);
+        if (o.classList.contains('_tree_hidden')) {
+           o.classList.toggle('_tree_hidden');
+        }
+        if (o.firstChild.firstChild.textContent == "\u25BA") {
+          o.firstChild.firstChild.textContent = "\u25BC";
+        }
+        if (o.firstChild.childNodes.length == 3) {
+          o.firstChild.childNodes[2].textContent = '\u2010';
+        }
+      }
+    }
+    var o = obj.parentNode.parentNode;
+    if (o.firstChild.firstChild.textContent == "\u25BA") {
+      o.firstChild.firstChild.textContent = "\u25BC";
+    }
+    obj.textContent = "\u2010";
+  }
+  // Symbole - => collapse all
+  else {
+    for (var i = 0; i < trs.length; i++) {
+      var s = trs[i].id+"";
+      if (s.match(re)) {
+        var o = document.getElementById(s);
+        if (! o.classList.contains('_tree_hidden')) {
+           o.classList.toggle('_tree_hidden');
+        }
+        if (o.firstChild.firstChild.textContent == "\u25BC") {
+          o.firstChild.firstChild.textContent = "\u25BA";
+        }
+        if (o.firstChild.childNodes.length == 3) {
+          o.firstChild.childNodes[2].textContent = '+';
+        }
+      }
+    }
+    var o = obj.parentNode.parentNode;
+    if (o.firstChild.firstChild.textContent == "\u25BC") {
+      o.firstChild.firstChild.textContent = "\u25BA";
+    }
+    obj.textContent = "+";
+  }
+}
+// Hide unselected tabs
+addLoadEvent(function(){
+  var x = document.getElementsByClassName("_tab_header_li");
+  for (var i = 0; i < x.length; i++) {
+    if (x[i].classList.contains("selected_tab") == false) {
+      var e = document.getElementById (x[i].dataset.tab);
+      e.style.display = "none";
+    }
+  }
+});
+// Change tab
+function change_tab (e, baseId) {
+  // Handle tabs
+  var i = 1;
+  while (true) {
+    var id = baseId + i;
+    var t = document.getElementById (id);
+    if (t == null) {
+      break;
+    }
+    if (id == e.dataset.tab) {
+      t.style.removeProperty("display");
+    }
+    else {
+      t.style.display = "none";
+    }
+    i = i + 1;
+  }
+  // Handle headers
+  $(e).siblings().each( function () {
+    this.classList.remove("selected_tab");
+  });
+  e.classList.add("selected_tab");
+}
+function __maqao_legacy_onresize () {
+  var obj = document.getElementById("spacer_page_title");
+  if (obj) {
+    obj.style.height = (document.getElementById("page_title").clientHeight + 20)+"px";
+  }
+  var obj = document.getElementById("page_title");
+  if (obj) {
+    var elems = document.getElementsByClassName ("_first_menu_level")
+    if (obj.clientHeight < 90) {
+      for (var i = 0; i < elems.length; i++) {
+        elems.item(i).style.borderBottomLeftRadius = "";
+        elems.item(i).style.borderBottomRightRadius = "";
+      }
+    }
+    else {
+      for (var i = 0; i < elems.length; i++) {
+        elems.item(i).style.borderBottomLeftRadius = "10px";
+        elems.item(i).style.borderBottomRightRadius = "10px";
+      }
+    }
+  }
+}
+</script>
+</body>
+</html>
